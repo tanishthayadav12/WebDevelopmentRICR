@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 6</title>
+</head>
+<body>
+  <center>
+    <table border="0" width="80%" cellpadding="10">
+      <tr>
+        <td align="center" width="40%">
+          <img src="doctorImages.jpg" 
+               alt="Doctor Image" width="250" height="300">
+        </td>
+        <td valign="top">
+          <h2><u>Doctor Appointment Form</u></h2>
+          <form>
+            <table cellpadding="5">
+              <tr>
+                <td>Patient Name:</td>
+                <td><input type="text" name="pname"></td>
+              </tr>
+              <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" min="0" max="120"></td>
+              </tr>
+              <tr>
+                <td>Gender:</td>
+                <td>
+                  <input type="radio" name="gender" value="Male"> Male
+                  <input type="radio" name="gender" value="Female"> Female
+                  <input type="radio" name="gender" value="Other"> Other
+                </td>
+              </tr>
+              <tr>
+                <td>Contact Number:</td>
+                <td><input type="text" name="phone"></td>
+              </tr>
+              <tr>
+                <td>Email ID:</td>
+                <td><input type="email" name="email"></td>
+              </tr>
+              <tr>
+                <td>Appointment Date:</td>
+                <td><input type="date" name="date"></td>
+              </tr>
+              <tr>
+                <td>Appointment Time:</td>
+                <td><input type="time" name="time"></td>
+              </tr>
+              <tr>
+                <td>Doctor's Name:</td>
+                <td><input type="text" name="doctor"></td>
+              </tr>
+              <tr>
+                <td>Department:</td>
+                <td>
+                  <select name="department">
+                    <option>--Select--</option>
+                    <option>General Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Dermatology</option>
+                    <option>Pediatrics</option>
+                    <option>Orthopedics</option>
+                    <option>ENT</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Appointment Type:</td>
+                <td>
+                  <input type="checkbox" name="type" value="Checkup"> Checkup
+                  <input type="checkbox" name="type" value="Consultation"> Consultation
+                  <input type="checkbox" name="type" value="Followup"> Follow-up
+                  <input type="checkbox" name="type" value="Test"> Medical Test
+                </td>
+              </tr>
+              <tr>
+                <td>Symptoms / Health Issue:</td>
+                <td><textarea name="symptoms" rows="4" cols="30"></textarea></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <input type="submit" value="Submit">
+                  <input type="reset" value="Reset">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>
