@@ -1,96 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Task 6</title>
+    <meta charset="UTF-8">
+    <title>Task 6</title>
 </head>
 <body>
-  <center>
-    <table border="0" width="80%" cellpadding="10">
-      <tr>
-        <td align="center" width="40%">
-          <img src="doctorImages.jpg" 
-               alt="Doctor Image" width="250" height="300">
-        </td>
-        <td valign="top">
-          <h2><u>Doctor Appointment Form</u></h2>
-          <form>
-            <table cellpadding="5">
-              <tr>
-                <td>Patient Name:</td>
-                <td><input type="text" name="pname"></td>
-              </tr>
-              <tr>
-                <td>Age:</td>
-                <td><input type="number" name="age" min="0" max="120"></td>
-              </tr>
-              <tr>
-                <td>Gender:</td>
-                <td>
-                  <input type="radio" name="gender" value="Male"> Male
-                  <input type="radio" name="gender" value="Female"> Female
-                  <input type="radio" name="gender" value="Other"> Other
-                </td>
-              </tr>
-              <tr>
-                <td>Contact Number:</td>
-                <td><input type="text" name="phone"></td>
-              </tr>
-              <tr>
-                <td>Email ID:</td>
-                <td><input type="email" name="email"></td>
-              </tr>
-              <tr>
-                <td>Appointment Date:</td>
-                <td><input type="date" name="date"></td>
-              </tr>
-              <tr>
-                <td>Appointment Time:</td>
-                <td><input type="time" name="time"></td>
-              </tr>
-              <tr>
-                <td>Doctor's Name:</td>
-                <td><input type="text" name="doctor"></td>
-              </tr>
-              <tr>
-                <td>Department:</td>
-                <td>
-                  <select name="department">
-                    <option>--Select--</option>
-                    <option>General Medicine</option>
-                    <option>Cardiology</option>
-                    <option>Dermatology</option>
-                    <option>Pediatrics</option>
-                    <option>Orthopedics</option>
-                    <option>ENT</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Appointment Type:</td>
-                <td>
-                  <input type="checkbox" name="type" value="Checkup"> Checkup
-                  <input type="checkbox" name="type" value="Consultation"> Consultation
-                  <input type="checkbox" name="type" value="Followup"> Follow-up
-                  <input type="checkbox" name="type" value="Test"> Medical Test
-                </td>
-              </tr>
-              <tr>
-                <td>Symptoms / Health Issue:</td>
-                <td><textarea name="symptoms" rows="4" cols="30"></textarea></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>
-                  <input type="submit" value="Submit">
-                  <input type="reset" value="Reset">
-                </td>
-              </tr>
-            </table>
-          </form>
-        </td>
-      </tr>
+    <table cellpadding="15" align="center">
+        <tr valign="top">
+            <td>
+                <img src="doctorImages.jpg" alt="Doctor" width="320" height="580">
+            </td>
+            <td>
+                <center>
+                    <h2><b>Doctor Appointment Form</b></h2>
+                    <hr color="red" width="80%">
+                </center>
+
+                <form>
+                    <table cellpadding="8" cellspacing="0">
+                        <tr>
+                            <td>Appointment Date:</td>
+                            <td><input type="date" name="appointment_date"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Appointment Time:</td>
+                            <td><input type="time" name="appointment_time"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Name:</td>
+                            <td>
+                                <input type="text" name="first_name" placeholder="First">
+                                <input type="text" name="last_name" placeholder="Last">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Gender:</td>
+                            <td>
+                                <input type="radio" name="gender" value="Male"> Male
+                                <input type="radio" name="gender" value="Female"> Female
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Phone:</td>
+                            <td><input type="text" name="phone"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Address:</td>
+                            <td>
+                                <input type="text" name="city" placeholder="City">
+                                <input type="text" name="state" placeholder="State">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Your Query:</td>
+                            <td>
+                                <textarea name="query" rows="4" cols="30"></textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Appointment Type:</td>
+                            <td>
+                                Select which appointment type(s) you require:<br>
+                                <input type="checkbox" name="type" value="Cervix"> Cervix checkup<br>
+                                <input type="checkbox" name="type" value="Heart"> Heart checkup<br>
+                                <input type="checkbox" name="type" value="Eye"> Eye check-up<br>
+                                <input type="checkbox" name="type" value="Hearing"> Hearing Test
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Send"></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
     </table>
-  </center>
 </body>
 </html>
