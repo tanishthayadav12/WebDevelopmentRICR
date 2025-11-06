@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.NavBar{
+    border: 1px solid black ;
+    background-color: blue;
+    color:aliceblue;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+
+}
+
+#links{
+    display: flex;
+    gap:20px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    background-color: rgba(5, 129, 160, 0.849);
+    color: aliceblue;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
