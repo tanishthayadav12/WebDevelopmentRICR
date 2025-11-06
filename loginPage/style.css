@@ -1,0 +1,90 @@
+body {
+  background: url(./Background.avif);
+  background-size: cover;
+}
+
+/* main container */
+#mainBox {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #1e293b; /* dark slate blue-gray */
+  height: 500px;
+  width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px 0 rgba(30, 41, 59, 0.3); /* matching shadow */
+}
+
+/* heading */
+#formHeading {
+  color: #0f172a; /* very dark navy */
+  text-align: center;
+}
+
+/* form fields */
+.formField {
+  margin: 20px;
+}
+.formField label {
+  color: #1d4ed8; /* deep medium blue */
+  font-size: medium;
+}
+.formField input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #60a5fa; /* light blue border */
+  outline-color: #3b82f6; /* focus blue */
+}
+
+/* form layout */
+#loginForm {
+  width: fit-content;
+  margin: 10px auto;
+}
+
+/* buttons */
+#formControl {
+  text-align: center;
+}
+#formControl button {
+  background-color: #64748b; /* slate gray-blue */
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* cancel button */
+#cancelButton {
+  border: 1px solid #be123c; /* soft red border */
+  background-color: #ef4444; /* warm red */
+  color: #f8fafc; /* light gray-white */
+}
+
+/* login button */
+#loginButton {
+  border: 1px solid #1d4ed8; /* strong blue border */
+  background-color: #2563eb; /* rich blue */
+  color: #f8fafc;
+}
+
+/* hover effects */
+#cancelButton:hover {
+  color: #ef4444;
+  background-color: #f8fafc;
+}
+
+#loginButton:hover {
+  color: #2563eb;
+  background-color: #f8fafc;
+}
+
+/* active (clicked) effects */
+#cancelButton:active {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+#loginButton:active {
+  background-color: #0f172a;
+  color: #f8fafc;
+}

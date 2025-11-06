@@ -1,0 +1,26 @@
+#A
+{
+    background: pink ;
+    border: 100px solid orange;
+    height: 300px;
+    width: 300px;
+    font-size: large;
+    padding: 100px;
+    margin-top: 100px; 
+
+}
+#B
+{
+    background-color: orange ;
+    border: 100px solid pink; 
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    font-size:large;
+    padding: 100px;
+    margin: 20 20 20 20;
+    padding: 10px;
+    box-shadow: 20px 20px lavender;
+
+
+}
