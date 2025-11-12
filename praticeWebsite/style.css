@@ -9,9 +9,10 @@
   top: 0;
 }
 
-#bigMain {
+#links {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  font-size: 16px;
 }
 
 #block {
@@ -29,66 +30,53 @@
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-}
-
-#links {
-  display: flex;
-  gap: 40px;
-  font-size: 16px;
+  cursor: pointer;
 }
 
 .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  padding: 80px 60px;
+  gap: 50px;
+  padding: 30px 60px;
   flex-wrap: wrap;
 }
 
 #welcome {
   flex: 1;
-}
+  max-width: 600px;
+  a {
+    color: grey;
+    text-decoration: underline;
+  }
 
-#welcome input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid;
-  width: 250px;
-  margin-right: 10px;
+  input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    width: 250px;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
 }
 
 #email {
   font-weight: bold;
 }
 
-#emailIn {
-  border: 1px solid black;
-  width: 250px;
-  margin: 10px 5px 10px 0;
-}
-
-#welcome button {
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-#welcome button {
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-#welcome a {
-  color: grey;
-  text-decoration: underline;
-}
-
 #myImg img {
-  width: 500px;
+  height: fit-content;
+  width: 475px;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -98,16 +86,13 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   padding: 50px 20px;
   background-color: white;
 }
 
-.logo div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+.logo img:hover {
+  transform: scale(1.5);
 }
 
 #logoTop {
@@ -116,6 +101,7 @@
 }
 
 #skill {
+  margin: 50px;
   text-align: center;
   font-size: medium;
 }
@@ -131,32 +117,164 @@
   color: grey;
 }
 
-.front {
-  text-align: center;
-  font-size: large;
+#mainSkill {
+  width: 70vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 50px;
+  margin: auto;
 }
 
-.frontPara {
-  font-size: medium;
+.subDiv {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: grey;
+  p {
+    color: gray;
+  }
 }
 
+#projects {
+  text-align: center;
+  margin: 50px;
+  p {
+    font-size: medium;
+    text-align: center;
+    color: grey;
+  }
+}
 
+#card {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+}
 
-#mainSkill div {
+.subCard {
+  padding: 10px;
+  align-items: center;
+  text-align: left;
+
+  p {
+    color: gray;
+  }
+
+  button {
+    height: 30px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    border: none;
+  }
+}
+
+#mainResume {
+  display: flex;
+  gap: 200px;
+  margin-left: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-right: 100px;
+}
+
+#resume {
+  button {
+    font-size: small;
+    color: black;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+  }
+}
+
+#resumeData {
+  p {
+    color: gray;
+    font-size: large;
+  }
+}
+
+#logoblk {
+  margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 50px 20px;
+  background-color: white;
+  img {
+    filter: grayscale(100%);
+  }
 }
 
-#projects{
+#clients {
   text-align: center;
+  margin-top: 100px;
+  h4 {
+    color: gray;
+  }
 }
 
-#pro{
-  font-size: medium;
+#clientBox {
   text-align: center;
+  margin-top: 100px;
+  p {
+    font-size: x-large;
+    color: gray;
+  }
+}
+
+#mobile {
+}
+
+#contact {
+  text-align: center;
+  margin-top: 100px;
+  h1{
+    font-size: 60px; 
+  }
+  p{
+    color: gray;
+    font-size: x-large;
+  }
+}
+
+#footer {
+  border-radius: 1px;
+  background: white;
+  padding: 30px 10px;
+  text-align: center;
+  display: flex;
+  gap: 200px;
+  bottom: 0;
+}
+
+.footer1 {
   color: grey;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer2 {
+  color: grey;
+  font-size: 16px;
+}
+
+#subscribe {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
 }
