@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RICR Form</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white">
+    <div class="navbar bg-white shadow-sm mb-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span class="h3 m-0 fw-bold text-primary">RICR</span>
+        <button class="btn bg-primary text-white">Student Login</button>
+      </div>
+    </div>
+
+    <div class="container text-center mb-4">
+      <h2 class="fw-bold">Enquiry Form</h2>
+      <p class="text-muted">
+        Have questions or need assistance? Fill out the form below to connect
+        with our team and explore your opportunities.
+      </p>
+    </div>
+
+    <div
+      class="container bg-primary-subtle border- my-10 p-5 py-4"
+      style="width: 700px"
+    >
+      <div class="bg-primary-subtle p-4 rounded shadow-sm">
+        <div class="mb-3">
+          <label class="form-label">Person Name*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="personName"
+            placeholder="Person Name"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Contact Number*</label>
+          <input
+            type="number"
+            class="form-control"
+            id="contactNumber"
+            placeholder="Contact Number"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email*</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Qualification*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="qualification"
+            placeholder="Qualification"
+            required
+          />
+        </div>
+
+        <div class="col-md-12">
+          <label class="form-label fw-semibold">College / School*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="collegeSchool"
+            placeholder="College/School"
+          />
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <label class="form-label fw-semibold">Year*</label>
+          <select class="form-select" id="year">
+            <option selected disabled>Select Year</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+            <option>Passout</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div class="col-12 mt-3">
+          <label class="form-label fw-semibold"
+            >Interested in Which Course*</label
+          >
+
+          <div class="row g-2 mt-1">
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course1" />
+              <label>Full Stack Web Development - Placement Oriented</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course2" />
+              <label>Data Science with Python - Placement Oriented</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course3" />
+              <label>Data Analytics with Python - Placement Oriented</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course4" />
+              <label>Business Analyst</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course5" />
+              <label>Java Programming</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course6" />
+              <label>Python Programming</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course7" />
+              <label>C/C++ Programming</label>
+            </div>
+
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" id="course8" />
+              <label>Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <label class="form-label fw-semibold">Branch*</label>
+          <input
+            type="text"
+            class="form-control"
+            id="branch"
+            placeholder="e.g., CSE, IT, Mechanical, Commerce"
+          />
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <label class="form-label fw-semibold">Source of Information*</label>
+          <p>
+            <b>
+              (Only choose 'Received call from institute' if you actually got a
+              call from us)*</b
+            >
+          </p>
+          <select class="form-select" id="source">
+            <option selected disabled>Select an option</option>
+            <option>Newspaper/Print media</option>
+            <option>Friends/Relatives</option>
+            <option>Social Media</option>
+            <option>WorkShop/Seminar</option>
+            <option>Received call from institute</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-6 mt-3">
+          <label class="form-label fw-semibold">Name of Executive</label>
+          <input
+            type="text"
+            class="form-control"
+            id="executive"
+            placeholder="Enter Executive Name"
+          />
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label class="form-label">Your Message*</label>
+          <textarea rows="4" class="form-control" id="message"></textarea>
+        </div>
+
+        <button class="btn btn-primary w-100 py-2" onclick="submitForm()">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3 mt-5">
+      © RICR. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
