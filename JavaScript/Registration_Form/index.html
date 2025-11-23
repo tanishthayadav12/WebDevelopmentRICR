@@ -169,35 +169,174 @@
               </select>
             </div>
             <div class="d-flex gap-5">
-              <label for="batch" class="form-label w-25"
+              <label for="batch" class="form-label pe-5 me-3"
                 >Batch Timing<sup class="text-danger">*</sup></label
               >
-
-              <div>
-                <input type="checkbox" />
-                <label for="M">Morning</label>
-              </div>
-
-              <div>
-                <input type="checkbox" />
-                <label for="A">Afternoon</label>
-              </div>
-
-              <div>
-                <input type="checkbox" />
-                <label for="E">Evening</label>
-              </div>
-
-              <div>
-                <input type="checkbox" />
-                <label for="W">Weekend</label>
+              <div class="d-flex gap-3">
+                <div class="d-flex gap-2">
+                  <input
+                    type="checkbox"
+                    name="batch"
+                    id="morning"
+                    value="morning"
+                    class="form-check-input"
+                    style="accent-color: red !important"
+                  />
+                  <span>Morning</span>
+                </div>
+                <div class="d-flex gap-2">
+                  <input
+                    type="checkbox"
+                    name="batch"
+                    id="afternoon"
+                    value="afternoon"
+                    class="form-check-input"
+                  />
+                  <span>Afternoon</span>
+                </div>
+                <div class="d-flex gap-2">
+                  <input
+                    type="checkbox"
+                    name="batch"
+                    id="evening"
+                    value="evening"
+                    class="form-check-input"
+                  />
+                  <span>Evening</span>
+                </div>
+                <div class="d-flex gap-2">
+                  <input
+                    type="checkbox"
+                    name="batch"
+                    id="weekends"
+                    value="weekends"
+                    class="form-check-input"
+                  />
+                  <span>Weekends</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <div class="border border-dark p-3 pt-4 my-3 position-relative">
+          <span
+            class="px-2 fs-5 position-absolute bg-white text-primary"
+            style="top: -15px"
+            >Address</span
+          >
+          <div class="d-grid gap-3">
+            <div class="d-flex align-items-center">
+              <label for="address" class="form-label w-25"
+                >Residential Address:<sup class="text-danger">*</sup>
+              </label>
+              <input
+                type="textarea"
+                name="address"
+                id="address"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="d-flex align-items-center">
+              <label for="city" class="form-label w-25"
+                >City: <sup class="text-danger">*</sup>
+              </label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="d-flex align-items-center">
+              <label for="pinCode" class="form-label w-25"
+                >Pin Code: <sup class="text-danger">*</sup>
+              </label>
+              <input
+                type="number"
+                name="pinCode"
+                id="pinCode"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
+          <span
+            class="px-2 fs-5 position-absolute bg-white text-primary"
+            style="top: -15px"
+            >Gaurdian Details:</span
+          >
+          <div class="d-grid gap-3">
+            <div class="d-flex align-items-center">
+              <label for="gaurdianName" class="form-label w-25"
+                >Gaurdian's Full Name<sup class="text-danger">*</sup>
+              </label>
+              <input
+                type="text"
+                name="gaurdianName"
+                id="gaurdianName"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="d-flex align-items-center">
+              <label for="guardianNumber" class="form-label w-25"
+                >Guardian's Contact Number:
+              </label>
+              <input
+                type="number"
+                name="guardianNumber"
+                id="guardianNumber"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
+          <span
+            class="px-2 fs-5 position-absolute bg-white text-primary"
+            style="top: -15px"
+            >Additional Information</span
+          >
+          <div class="d-grid gap-3">
+            <div class="d-flex align-items-center">
+              <label for="address" class="form-label w-25"
+                >How did you hear about us?<sup class="text-danger">*</sup>
+              </label>
+              <select name="course" id="course" class="w-100" required>
+                <option value="select">--Select--</option>
+                <option value="Friends">Friends</option>
+                <option value="Online Ad">Online Ad</option>
+                <option value="Newspaper">Newspaper</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="d-flex align-items-center">
+              <label for="city" class="form-label w-25"
+                >Special Requirements:
+              </label>
+              <input
+                type="textarea"
+                name="requirements"
+                id="requirements"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+
         <br />
-        <button class="bg-primary border rounded">Submit</button>
+        <button class="btn btn-primary border" onclick="submit()">
+          Submit
+        </button>
       </div>
     </main>
 
@@ -206,5 +345,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
