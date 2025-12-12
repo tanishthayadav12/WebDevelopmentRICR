@@ -16,13 +16,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
   </head>
-  <body class="bg-primary-subtle">
-    <header class="container-fluid p-2 mb-5 bg-warning shadow">
-      <div class="text-center fw-bold fs-3">Tip Calculator</div>
+  <body class="bg-primary">
+    <header class="p-2 mb-5 bg-primary-subtle shadow">
+      <div class="text-center text-dark fs-3">Tip Calculator</div>
     </header>
 
     <div
-      class="container w-25 bg-warning-subtle shadow-lg justify-content-center p-4 rounded pb-5"
+      class="container w-50 bg-light shadow-lg justify-content-center p-4 rounded pb-5"
     >
       <div class="fw-bold">Bill Amount</div>
       <div>
@@ -39,12 +39,12 @@
       <div class="fw-bold mt-3">How was the service?</div>
       <div>
         <select name="service" id="service" class="form-control">
-        <option>--Select--</option>
-        <option value="25">25% Top Notch</option>
-        <option value="20">20% Excellent</option>
-        <option value="15">15% Good</option>
-        <option value="10">10% Bad</option>
-        <option value="5">5% Worst</option>
+          <option>--Select--</option>
+          <option value="25">25% Top Notch</option>
+          <option value="20">20% Excellent</option>
+          <option value="15">15% Good</option>
+          <option value="10">10% Bad</option>
+          <option value="5">5% Worst</option>
         </select>
       </div>
 
@@ -60,12 +60,13 @@
         />
       </div>
 
-        <button
-          class="btn btn-dark fw-bold form-control mt-4" style="width: 150px;"
-          onclick="calculate()"
-        >
-          Calculate
-        </button>
+      <button
+        class="btn btn-dark fw-bold form-control mt-4"
+        style="width: 150px"
+        onclick="calculate()"
+      >
+        Calculate
+      </button>
 
       <div class="text-center fw-bold fs-3 mt-3" id="result"></div>
     </div>
