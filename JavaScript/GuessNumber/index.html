@@ -16,37 +16,46 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
   </head>
-  <body class="bg-danger-subtle">
-    <header class="container-fluid bg-danger shadow p-2 mb-5">
+  <body>
+    <header class="bg-primary text-light p-2 mb-5">
       <div class="text-center fw-bolder fs-3">Guess The Number</div>
     </header>
 
-    <div
-      class="container w-25 bg-warning shadow mt-5 p-4 rounded justify-content-center"
-    >
-      <div class="mb-5 text-center fw-bold">
-        We have selected a random number between 1-10. See if you can guess it.
-      </div>
-      <div class="d-flex gap-2">
-        <div class="fw-bold pt-2">Guess:</div>
-        <div>
-          <input
-            type="number"
-            id="guess"
-            name="guess"
-            placeholder="Enter a Guess"
-            class="form-control"
-            style="width: 250px;"
-          />
+    <center>
+      <div class="w-50 shadow mt-5 p-4 rounded">
+        <div class="mb-4 text-center">
+          <b
+            >We have selected a random number between 1-10. See if you can guess
+            it.</b
+          >
         </div>
-      </div>
+        <div class="d-flex gap-2">
+          <div class="fw-bold pt-2">Guess:</div>
+          <div>
+            <input
+              type="number"
+              id="guess"
+              name="guess"
+              placeholder="Enter a Guess"
+              class="form-control"
+              style="width: 520px"
+            />
+          </div>
+        </div>
 
-      <div class="text-center">
-        <button class="btn btn-dark mt-3" style="width: 150px" onclick="Check()">Check</button>
-      </div>
+        <div class="text-center">
+          <button
+            class="btn btn-dark mt-3"
+            style="width: 150px"
+            onclick="Check()"
+          >
+            Check
+          </button>
+        </div>
 
-      <div class="fw-bold fs-5 text-center mt-4" id="result"></div>
-    </div>
+        <div class="fw-bold fs-5 text-center mt-4" id="result"></div>
+      </div>
+    </center>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
