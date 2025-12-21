@@ -1,0 +1,22 @@
+body {
+  background: aliceblue;
+}
+
+.bill-card {
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.bill-row.total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-top: 1px solid #dee2e6;
+  margin-top: 10px;
+  padding-top: 10px;
+}
