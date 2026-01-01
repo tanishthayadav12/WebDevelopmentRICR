@@ -1,0 +1,50 @@
+[
+  {
+    "countryName": "India",
+    "countryCode": "IN",
+    "currencyName": "Indian Rupee",
+    "currencyCode": "INR"
+  },
+  {
+    "countryName": "United States of America",
+    "countryCode": "US",
+    "currencyName": "United States Dollar",
+    "currencyCode": "USD"
+  },
+  {
+    "countryName": "United Kingdom",
+    "countryCode": "GB",
+    "currencyName": "Pound Sterling",
+    "currencyCode": "GBP"
+  },
+  {
+    "countryName": "Japan",
+    "countryCode": "JP",
+    "currencyName": "Yen",
+    "currencyCode": "JPY"
+  },
+  {
+    "countryName": "European Union",
+    "countryCode": "EU",
+    "currencyName": "Euro",
+    "currencyCode": "EUR"
+  },
+  {
+    "countryName": "Australia",
+    "countryCode": "AU",
+    "currencyName": "Australian Dollar",
+    "currencyCode": "AUD"
+  },
+  {
+    "countryName": "Canada",
+    "countryCode": "CA",
+    "currencyName": "Canadian Dollar",
+    "currencyCode": "CAD"
+  },
+  {
+    "countryName": "China",
+    "countryCode": "CN",
+    "currencyName": "Yuan Renminbi",
+    "currencyCode": "CNY"
+  }
+]
