@@ -4,6 +4,7 @@ import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ForgetPasswordModal from "../components/publicModals/ForgetPasswordModal";
+import Loading from "../components/Loading";
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
@@ -46,7 +47,7 @@ const Login = () => {
       switch (res.data.data.role) {
         case "manager": {
           setRole("manager");
-          navigate("/restaurant-dashboard");
+          navigate("/resturant-dashboard");
           break;
         }
         case "partner": {
@@ -57,6 +58,7 @@ const Login = () => {
         case "customer": {
           setRole("customer");
           navigate("/user-dashboard");
+          navigate("/user-dashboard", { state: { tab: "overview" } });
           break;
         }
         case "admin": {
@@ -76,16 +78,24 @@ const Login = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="w-100 h-100 flex items-center justify-center">
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-(--color-background) to-(--color-background) py-6 px-4">
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-(--color-text) mb-2">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
               Welcome Back
             </h1>
-            {/* <p className="text-lg text-(--color-text)">
+            {/* <p className="text-lg text-gray-600">
               You are 1 step away to stop your Cavings
             </p> */}
           </div>
@@ -108,7 +118,7 @@ const Login = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full h-fit px-4 py-3 border-2 border-(--color-primary) rounded-lg focus:outline-none focus:border-(--color-primary) transition disabled:cursor-not-allowed disabled:bg-(--color-background)"
+                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
 
                   <input
@@ -119,7 +129,7 @@ const Login = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border-2 border-(--color-primary) rounded-lg focus:outline-none focus:border-(--color-primary) transition disabled:cursor-not-allowed disabled:bg-(--color-background)"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                 </div>
                 <div className="w-full flex justify-end">
@@ -136,18 +146,18 @@ const Login = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="flex gap-4 pt-8 border-t-2 border-(--color-primary)">
+              <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
                   type="reset"
                   disabled={isLoading}
-                  className="flex-1 bg-(--color-background) text-(--color-text) font-bold py-4 px-6 rounded-lg hover:bg-(--color-secondary-hover) transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-(--color-background) disabled:cursor-not-allowed"
+                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                   Clear Form
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-(--color-primary) to-(--color-primary-hover) text-white font-bold py-4 px-6 rounded-lg hover:from-(--color-primary-hover) hover:to-(--color-primary-hover) transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-(--color-background)  disabled:cursor-not-allowed"
+                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
                 >
                   {isLoading ? "loading.." : "Login"}
                 </button>
@@ -156,7 +166,7 @@ const Login = () => {
           </div>
 
           {/* Footer Note */}
-          <p className="text-center text-(--color-text) mt-8 text-sm">
+          <p className="text-center text-gray-600 mt-8 text-sm">
             All fields marked are mandatory. We respect your privacy.
           </p>
         </div>

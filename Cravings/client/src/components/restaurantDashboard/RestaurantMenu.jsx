@@ -27,16 +27,14 @@ const RestaurantMenu = () => {
   };
 
   useEffect(() => {
-    queueMicrotask(() => {
-      fetchMenuItem();
-    });
-  }, []);
+    if (!isAddItemModalOpen && !isEditItemModalOpen) fetchMenuItem();
+  }, [isAddItemModalOpen,isEditItemModalOpen]);
   return (
     <>
-      <div className="bg-(--color-background) rounded-lg p-6 h-full overflow-y-auto">
-        <div className="bg-white rounded-lg shadow-md p-6 border border-(--color-primary) ">
+      <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 ">
           <div className="flex justify-between">
-            <h2 className="text-2xl font-bold text-(--color-text) mb-4">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Menu Management
             </h2>
             <button
@@ -46,8 +44,8 @@ const RestaurantMenu = () => {
               Add Item
             </button>
           </div>
-
           <div className="border mt-3" />
+
           <div>
             <table className="w-full mt-3">
               <thead>
@@ -65,7 +63,7 @@ const RestaurantMenu = () => {
                 {menuItems &&
                   menuItems.map((items, idx) => (
                     <tr
-                      className="grid grid-cols-8 text-center py-2 border-b border-(--color-primary)"
+                      className="grid grid-cols-8 text-center py-2 border-b border-gray-300"
                       key={idx}
                     >
                       <td className="">{idx + 1}</td>
@@ -76,12 +74,12 @@ const RestaurantMenu = () => {
                       <td className="flex justify-center items-center text-2xl">
                         {items.availability === "available" ? (
                           <FaToggleOn
-                            className="text-(--color-primary)"
+                            className="text-green-500"
                             title="Available"
                           />
                         ) : items.availability === "unavailable" ? (
                           <FaToggleOff
-                            className="text-(--color-accent)"
+                            className="text-red-500"
                             title="Unavailable"
                           />
                         ) : (
@@ -93,7 +91,7 @@ const RestaurantMenu = () => {
                       </td>
                       <td className="flex gap-4 justify-center">
                         <button
-                          className="text-(--color-text) p-2 rounded-lg bg-(--color-background) shadow"
+                          className="text-gray-500 p-2 rounded-lg bg-gray-200 shadow"
                           onClick={() => {
                             setSelectedItem(items);
                             setIsViewItemModalOpen(true);
@@ -102,7 +100,7 @@ const RestaurantMenu = () => {
                           <FaEye />
                         </button>
                         <button
-                          className="text-(--color-primary)  p-2 rounded-lg bg-(--color-background) shadow"
+                          className="text-blue-500  p-2 rounded-lg bg-gray-200 shadow"
                           onClick={() => {
                             setSelectedItem(items);
                             setIsEditItemModalOpen(true);
@@ -120,12 +118,7 @@ const RestaurantMenu = () => {
       </div>
 
       {isAddItemModalOpen && (
-        <AddMenuItemModal
-          onClose={() => {
-            setIsAddItemModalOpen(false);
-            fetchMenuItem();
-          }}
-        />
+        <AddMenuItemModal onClose={() => setIsAddItemModalOpen(false)} />
       )}
       {isViewItemModalOpen && (
         <ViewItemModal
@@ -135,10 +128,7 @@ const RestaurantMenu = () => {
       )}
       {isEditItemModalOpen && (
         <EditItemModal
-          onClose={() => {
-            setIsEditItemModalOpen(false);
-            fetchMenuItem();
-          }}
+          onClose={() => setIsEditItemModalOpen(false)}
           selectedItem={selectedItem}
         />
       )}

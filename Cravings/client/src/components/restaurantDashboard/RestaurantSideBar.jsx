@@ -69,7 +69,7 @@ const RestaurantSideBar = ({
                 ${
                   active === item.key
                     ? "bg-(--color-secondary) text-white"
-                    : "hover:bg-(--color-background)/70"
+                    : "hover:bg-gray-100/70"
                 } 
               `}
                 onClick={() => setActive(item.key)}
@@ -84,7 +84,7 @@ const RestaurantSideBar = ({
 
         <div>
           <button
-            className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-(--color-accent) hover:text-white text-(--color-accent)"
+            className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-red-500 hover:text-white text-red-600"
             onClick={handleLogout}
           >
             <MdLogout />

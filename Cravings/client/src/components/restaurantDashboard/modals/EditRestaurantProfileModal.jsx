@@ -162,13 +162,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
     <>
       <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-100">
         <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
-          <div className="flex justify-between px-6 py-4 border-b border-(--color-primary) items-center sticky top-0 bg-white">
-            <h2 className="text-xl font-semibold text-(--color-text)">
+          <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
+            <h2 className="text-xl font-semibold text-gray-800">
               Edit Restaurant Profile
             </h2>
             <button
               onClick={() => onClose()}
-              className="text-(--color-text) hover:text-(--color-accent) text-2xl transition"
+              className="text-gray-600 hover:text-red-600 text-2xl transition"
             >
               ⊗
             </button>
@@ -178,8 +178,8 @@ const EditRestaurantProfileModal = ({ onClose }) => {
             <div
               className={`mx-6 mt-4 p-4 rounded-md ${
                 message.type === "success"
-                  ? "bg-(--color-background) text-(--color-primary) border border-(--color-primary)"
-                  : "bg-(--color-accent) text-(--color-accent) border border-(--color-accent)"
+                  ? "bg-green-100 text-green-700 border border-green-300"
+                  : "bg-red-100 text-red-700 border border-red-300"
               }`}
             >
               {message.text}
@@ -189,12 +189,12 @@ const EditRestaurantProfileModal = ({ onClose }) => {
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
             {/* Personal Information Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Personal Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name *
                   </label>
                   <input
@@ -202,20 +202,20 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.fullName ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.fullName ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Enter manager name"
                   />
                   {errors.fullName && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.fullName}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Email
                   </label>
                   <input
@@ -223,15 +223,15 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="email"
                     value={formData.email}
                     disabled
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 bg-(--color-background) text-(--color-text) cursor-not-allowed"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100 text-gray-600 cursor-not-allowed"
                   />
-                  <p className="text-(--color-text) text-xs mt-1">
+                  <p className="text-gray-500 text-xs mt-1">
                     Email cannot be changed
                   </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Mobile Number *
                   </label>
                   <input
@@ -239,27 +239,27 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="mobileNumber"
                     value={formData.mobileNumber}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.mobileNumber ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.mobileNumber ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="10-digit mobile number"
                   />
                   {errors.mobileNumber && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.mobileNumber}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Gender
                   </label>
                   <select
                     name="gender"
                     value={formData.gender}
                     onChange={handleInputChange}
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
@@ -269,7 +269,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Date of Birth
                   </label>
                   <input
@@ -277,7 +277,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="dob"
                     value={formData.dob}
                     onChange={handleInputChange}
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -285,12 +285,12 @@ const EditRestaurantProfileModal = ({ onClose }) => {
 
             {/* Restaurant Information Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Restaurant Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Restaurant Name *
                   </label>
                   <input
@@ -298,22 +298,20 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="restaurantName"
                     value={formData.restaurantName}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.restaurantName
-                        ? "border-(--color-accent)"
-                        : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.restaurantName ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Enter restaurant name"
                   />
                   {errors.restaurantName && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.restaurantName}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Cuisine Type
                   </label>
                   <input
@@ -321,7 +319,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="cuisine"
                     value={formData.cuisine}
                     onChange={handleInputChange}
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="e.g., Italian, Indian, Chinese"
                   />
                 </div>
@@ -330,12 +328,12 @@ const EditRestaurantProfileModal = ({ onClose }) => {
 
             {/* Address Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Address
               </h3>
               <div className="grid grid-cols-1 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Address
                   </label>
                   <input
@@ -343,14 +341,14 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Enter restaurant address"
                   />
                 </div>
 
                 <div className="grid grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-(--color-text) mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       City *
                     </label>
                     <input
@@ -358,18 +356,18 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                        errors.city ? "border-(--color-accent)" : "border-(--color-primary)"
+                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                        errors.city ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="Enter city"
                     />
                     {errors.city && (
-                      <p className="text-(--color-accent) text-xs mt-1">{errors.city}</p>
+                      <p className="text-red-600 text-xs mt-1">{errors.city}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-(--color-text) mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       PIN Code *
                     </label>
                     <input
@@ -377,20 +375,20 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                       name="pin"
                       value={formData.pin}
                       onChange={handleInputChange}
-                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                        errors.pin ? "border-(--color-accent)" : "border-(--color-primary)"
+                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                        errors.pin ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="6-digit PIN"
                       maxLength="6"
                     />
                     {errors.pin && (
-                      <p className="text-(--color-accent) text-xs mt-1">{errors.pin}</p>
+                      <p className="text-red-600 text-xs mt-1">{errors.pin}</p>
                     )}
                   </div>
                   <div className="flex items-end">
                     <div className="h-fit flex items-center w-full gap-4">
                       <button
-                        className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 h-fit"
+                        className="w-full border border-gray-300 rounded-md shadow-sm p-2 h-fit"
                         onClick={fetchLocation}
                       >
                         Get Live Location
@@ -407,12 +405,12 @@ const EditRestaurantProfileModal = ({ onClose }) => {
 
             {/* Business Documents Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Business Documents
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     GST Certificate
                   </label>
                   <input
@@ -421,13 +419,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "gst", e.target.value)
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="GST number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     FSSAI License
                   </label>
                   <input
@@ -436,13 +434,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "fssai", e.target.value)
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="FSSAI registration number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     RC (Vehicle Registration)
                   </label>
                   <input
@@ -451,13 +449,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "rc", e.target.value)
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Registration certificate"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Driving License
                   </label>
                   <input
@@ -466,13 +464,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "dl", e.target.value)
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Driving license number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     UIDAI (Aadhaar)
                   </label>
                   <input
@@ -481,13 +479,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "uidai", e.target.value)
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="12-digit UIDAI number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     PAN
                   </label>
                   <input
@@ -496,14 +494,14 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "pan", e.target.value)
                     }
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.pan ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.pan ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="PAN number"
                     maxLength="10"
                   />
                   {errors.pan && (
-                    <p className="text-(--color-accent) text-xs mt-1">{errors.pan}</p>
+                    <p className="text-red-600 text-xs mt-1">{errors.pan}</p>
                   )}
                 </div>
               </div>
@@ -511,12 +509,12 @@ const EditRestaurantProfileModal = ({ onClose }) => {
 
             {/* Payment Details Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Payment Details
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     UPI ID
                   </label>
                   <input
@@ -529,18 +527,18 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.upi ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.upi ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="username@bank"
                   />
                   {errors.upi && (
-                    <p className="text-(--color-accent) text-xs mt-1">{errors.upi}</p>
+                    <p className="text-red-600 text-xs mt-1">{errors.upi}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Account Number
                   </label>
                   <input
@@ -553,13 +551,13 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Bank account number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     IFSC Code
                   </label>
                   <input
@@ -572,7 +570,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="IFSC code"
                   />
                 </div>
@@ -580,19 +578,19 @@ const EditRestaurantProfileModal = ({ onClose }) => {
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end space-x-4 pt-6 border-t border-(--color-primary)">
+            <div className="flex justify-end space-x-4 pt-6 border-t border-gray-300">
               <button
                 type="button"
                 onClick={() => onClose()}
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-background) text-(--color-text) rounded-md hover:bg-(--color-secondary-hover) transition disabled:opacity-50"
+                className="px-6 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-primary) text-white rounded-md hover:bg-(--color-primary-hover) transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>

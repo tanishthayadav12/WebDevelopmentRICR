@@ -1,25 +1,19 @@
-/* eslint-disable react-refresh/only-export-components */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 
 const AuthContext = React.createContext();
 
 export const AuthProvider = (props) => {
-  const [user, setUserState] = useState(
+  const [user, setUser] = useState(
     JSON.parse(sessionStorage.getItem("CravingUser")) || "",
   );
   const [isLogin, setIsLogin] = useState(!!user);
   const [role, setRole] = useState(user?.role || "");
 
-  const setUser = (nextUser) => {
-    setUserState((prevUser) => {
-      const resolvedUser =
-        typeof nextUser === "function" ? nextUser(prevUser) : nextUser;
-      setIsLogin(!!resolvedUser);
-      setRole(resolvedUser?.role || "");
-      return resolvedUser;
-    });
-  };
+  useEffect(() => {
+    setIsLogin(!!user);
+    setRole(user?.role || "");
+  }, [user]);
 
   const value = { user, setUser, isLogin, setIsLogin, role, setRole };
 
@@ -28,6 +22,4 @@ export const AuthProvider = (props) => {
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useAuth } from "../../../context/AuthContext";
 import api from "../../../config/Api";
 import toast from "react-hot-toast";
 
 const EditItemModal = ({ onClose, selectedItem }) => {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     itemName: selectedItem?.itemName || "",
     description: selectedItem?.description || "",
@@ -49,7 +51,7 @@ const EditItemModal = ({ onClose, selectedItem }) => {
 
     try {
       const form_data = new FormData();
-      //   form_data.append("itemID", selectedItem._id);
+    //   form_data.append("itemID", selectedItem._id);
       form_data.append("itemName", formData.itemName);
       form_data.append("description", formData.description);
       form_data.append("price", formData.price);
@@ -102,25 +104,25 @@ const EditItemModal = ({ onClose, selectedItem }) => {
     <>
       <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-100">
         <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
-          <div className="flex justify-between px-6 py-4 border-b border-(--color-primary) items-center sticky top-0 bg-white">
-            <h2 className="text-xl font-semibold text-(--color-text)">
+          <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
+            <h2 className="text-xl font-semibold text-gray-800">
               Edit Menu Item
             </h2>
             <button
               onClick={handleClose}
-              className="text-(--color-text) hover:text-(--color-accent) text-2xl transition"
+              className="text-gray-600 hover:text-red-600 text-2xl transition"
             >
-              X
+              ⊗
             </button>
           </div>
 
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
             {/* Item Image Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Update Item Image
               </h3>
-              <p className="text-sm text-(--color-text) mb-3">
+              <p className="text-sm text-gray-600 mb-3">
                 Upload new images if you want to change them
               </p>
               <div className="flex items-end gap-4">
@@ -131,10 +133,10 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                   Add Image
                 </label>
                 <div className="flex flex-col">
-                  <span className="text-sm text-(--color-text)">
+                  <span className="text-sm text-gray-600">
                     (Upto 5 Images Allowed)
                   </span>
-                  <span className="text-sm text-(--color-text)">
+                  <span className="text-sm text-gray-600">
                     (Max Size: 1MB each)
                   </span>
                 </div>
@@ -169,12 +171,12 @@ const EditItemModal = ({ onClose, selectedItem }) => {
 
             {/* Basic Information Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Basic Information
               </h3>
               <div className="grid grid-cols-1 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Item Name *
                   </label>
                   <input
@@ -182,20 +184,20 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     name="itemName"
                     value={formData.itemName}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.itemName ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.itemName ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="e.g., Butter Chicken"
                   />
                   {errors.itemName && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.itemName}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Description *
                   </label>
                   <textarea
@@ -203,13 +205,13 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     value={formData.description}
                     onChange={handleInputChange}
                     rows="3"
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.description ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.description ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Describe the dish, ingredients, and taste"
                   />
                   {errors.description && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.description}
                     </p>
                   )}
@@ -219,12 +221,12 @@ const EditItemModal = ({ onClose, selectedItem }) => {
 
             {/* Pricing & Category Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Pricing & Category
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Price (₹) *
                   </label>
                   <input
@@ -234,18 +236,18 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     onChange={handleInputChange}
                     step="0.01"
                     min="0"
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.price ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.price ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="0.00"
                   />
                   {errors.price && (
-                    <p className="text-(--color-accent) text-xs mt-1">{errors.price}</p>
+                    <p className="text-red-600 text-xs mt-1">{errors.price}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Serving Size *
                   </label>
                   <input
@@ -253,20 +255,20 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     name="servingSize"
                     value={formData.servingSize}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.servingSize ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.servingSize ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="e.g., 2 Persons"
                   />
                   {errors.servingSize && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.servingSize}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Cuisine
                   </label>
                   <input
@@ -274,7 +276,7 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     name="cuisine"
                     value={formData.cuisine}
                     onChange={handleInputChange}
-                    className="w-full border border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="e.g., Indian, Italian"
                   />
                 </div>
@@ -283,14 +285,14 @@ const EditItemModal = ({ onClose, selectedItem }) => {
 
             {/* Attributes Section */}
             <div>
-              <h3 className="text-lg font-semibold text-(--color-text) mb-4 pb-2 border-b border-(--color-primary)">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
                 Item Attributes
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="">
                   <label
                     htmlFor="type"
-                    className="block text-sm font-medium text-(--color-text) mb-1"
+                    className="block text-sm font-medium text-gray-700 mb-1"
                   >
                     Food Type
                   </label>
@@ -298,7 +300,7 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     name="type"
                     value={formData.type}
                     onChange={handleInputChange}
-                    className="border w-full border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="border w-full border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Type</option>
                     <option value="veg">Vegetarian</option>
@@ -312,7 +314,7 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Preparation Time (minutes) *
                   </label>
                   <input
@@ -321,15 +323,15 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     value={formData.preparationTime}
                     onChange={handleInputChange}
                     min="0"
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.preparationTime
-                        ? "border-(--color-accent)"
-                        : "border-(--color-primary)"
+                        ? "border-red-500"
+                        : "border-gray-300"
                     }`}
                     placeholder="e.g., 15"
                   />
                   {errors.preparationTime && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.preparationTime}
                     </p>
                   )}
@@ -340,7 +342,7 @@ const EditItemModal = ({ onClose, selectedItem }) => {
                     name="availability"
                     value={formData.availability}
                     onChange={handleInputChange}
-                    className="border w-full border-(--color-primary) rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="border w-full border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Availability</option>
                     <option value="available">Available</option>
@@ -352,23 +354,23 @@ const EditItemModal = ({ onClose, selectedItem }) => {
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end space-x-4 pt-6 border-t border-(--color-primary)">
+            <div className="flex justify-end space-x-4 pt-6 border-t border-gray-300">
               <button
                 type="button"
                 onClick={handleClose}
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-background) text-(--color-text) rounded-md hover:bg-(--color-secondary-hover) transition disabled:opacity-50"
+                className="px-6 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-primary) text-white rounded-md hover:bg-(--color-primary-hover) transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>
-                    <span className="animate-spin">Loading...</span>
+                    <span className="animate-spin">⟳</span> Updating...
                   </>
                 ) : (
                   "Update Menu Item"

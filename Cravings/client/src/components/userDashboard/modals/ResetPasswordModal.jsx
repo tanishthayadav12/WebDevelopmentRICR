@@ -9,7 +9,7 @@ const ResetPasswordModal = ({ onClose }) => {
     newPassword: "",
     cfNewPassword: "",
   });
-  const [errors] = useState({});
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -39,15 +39,15 @@ const ResetPasswordModal = ({ onClose }) => {
     <>
       <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
         <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
-          <div className="flex justify-between px-6 py-4 border-b border-(--color-primary) items-center sticky top-0 bg-white">
-            <h2 className="text-xl font-semibold text-(--color-text)">
+          <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
+            <h2 className="text-xl font-semibold text-gray-800">
               Reset Password
             </h2>
             <button
               onClick={() => onClose()}
-              className="text-(--color-text) hover:text-(--color-accent) text-2xl transition"
+              className="text-gray-600 hover:text-red-600 text-2xl transition"
             >
-              X
+              ⊗
             </button>
           </div>
 
@@ -58,7 +58,7 @@ const ResetPasswordModal = ({ onClose }) => {
             <div>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Old Password *
                   </label>
                   <input
@@ -66,19 +66,19 @@ const ResetPasswordModal = ({ onClose }) => {
                     name="oldPassword"
                     value={formData.oldPassword}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.oldPassword ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.oldPassword ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Enter your old password"
                   />
                   {errors.oldPassword && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.oldPassword}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     New Password *
                   </label>
                   <input
@@ -86,19 +86,19 @@ const ResetPasswordModal = ({ onClose }) => {
                     name="newPassword"
                     value={formData.newPassword}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
-                      errors.newPassword ? "border-(--color-accent)" : "border-(--color-primary)"
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.newPassword ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Enter your new password"
                   />
                   {errors.newPassword && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.newPassword}
                     </p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Confirm New Password *
                   </label>
                   <input
@@ -106,15 +106,15 @@ const ResetPasswordModal = ({ onClose }) => {
                     name="cfNewPassword"
                     value={formData.cfNewPassword}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.cfNewPassword
-                        ? "border-(--color-accent)"
-                        : "border-(--color-primary)"
+                        ? "border-red-500"
+                        : "border-gray-300"
                     }`}
                     placeholder="Confirm new password"
                   />
                   {errors.cfNewPassword && (
-                    <p className="text-(--color-accent) text-xs mt-1">
+                    <p className="text-red-600 text-xs mt-1">
                       {errors.cfNewPassword}
                     </p>
                   )}
@@ -123,23 +123,23 @@ const ResetPasswordModal = ({ onClose }) => {
             </div>
 
             {/* Form Actions */}
-            <div className="flex justify-end space-x-4 pt-6 border-t border-(--color-primary)">
+            <div className="flex justify-end space-x-4 pt-6 border-t border-gray-300">
               <button
                 type="button"
                 onClick={() => onClose()}
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-background) text-(--color-text) rounded-md hover:bg-(--color-secondary-hover) transition disabled:opacity-50"
+                className="px-6 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-primary) text-white rounded-md hover:bg-(--color-primary-hover) transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>
-                    <span className="animate-spin">Loading...</span>
+                    <span className="animate-spin">⟳</span> Saving...
                   </>
                 ) : (
                   "Save Changes"

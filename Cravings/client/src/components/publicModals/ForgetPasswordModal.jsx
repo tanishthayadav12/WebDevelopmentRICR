@@ -61,22 +61,22 @@ const ForgetPasswordModal = ({ onClose }) => {
     <>
       <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
         <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
-          <div className="flex justify-between px-6 py-4 border-b border-(--color-primary) items-center sticky top-0 bg-white">
-            <h2 className="text-xl font-semibold text-(--color-text)">
+          <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
+            <h2 className="text-xl font-semibold text-gray-800">
               Reset Password
             </h2>
             <button
               onClick={() => onClose()}
-              className="text-(--color-text) hover:text-(--color-accent) text-2xl transition"
+              className="text-gray-600 hover:text-red-600 text-2xl transition"
             >
-              X
+              ⊗
             </button>
           </div>
 
           <form onSubmit={handleSubmit} className="p-5 ">
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-(--color-text) mb-1">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address *
                 </label>
                 <input
@@ -84,7 +84,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full border rounded-md shadow-sm p-2 disabled:bg-(--color-background) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                  className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter your registered email"
                   disabled={isOtpSent}
                 />
@@ -92,7 +92,7 @@ const ForgetPasswordModal = ({ onClose }) => {
 
               {isOtpSent && (
                 <div>
-                  <label className="block text-sm font-medium text-(--color-text) mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     OTP *
                   </label>
                   <input
@@ -100,7 +100,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                     name="otp"
                     value={formData.otp}
                     onChange={handleInputChange}
-                    className="w-full border rounded-md shadow-sm p-2 disabled:bg-(--color-background) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                    className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Enter OTP recieved in email"
                     disabled={isOtpVerified}
                   />
@@ -110,7 +110,7 @@ const ForgetPasswordModal = ({ onClose }) => {
               {isOtpSent && isOtpVerified && (
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-(--color-text) mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       New Password *
                     </label>
                     <input
@@ -118,12 +118,12 @@ const ForgetPasswordModal = ({ onClose }) => {
                       name="newPassword"
                       value={formData.newPassword}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-(--color-background) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter your new password"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-(--color-text) mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       Confirm New Password *
                     </label>
                     <input
@@ -131,7 +131,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                       name="cfNewPassword"
                       value={formData.cfNewPassword}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-(--color-background) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Confirm new password"
                     />
                   </div>
@@ -143,7 +143,7 @@ const ForgetPasswordModal = ({ onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-(--color-primary) text-white rounded-md hover:bg-(--color-primary-hover) transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>
