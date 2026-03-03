@@ -10,6 +10,7 @@ import UserRouter from "./src/routers/userRouter.js";
 import RestaurantRouter from "./src/routers/restaurantRouter.js";
 import OrderRouter from "./src/routers/orderRouter.js";
 import PaymentRouter from "./src/routers/paymentRouter.js";
+import RiderRouter from "./src/routers/riderRouter.js";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/user", UserRouter);
 app.use("/restaurant", RestaurantRouter);
 app.use("/order", OrderRouter);
 app.use("/payment", PaymentRouter);
+app.use("/rider", RiderRouter);
 
 app.get("/", (req, res) => {
   console.log("Server is Working");
