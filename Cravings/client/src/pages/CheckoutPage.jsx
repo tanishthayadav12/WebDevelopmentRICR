@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import api from "../config/Api";
-import logo from "../assets/circleLogo.png";
 
 const PromoCode = {
   NEW50: 50,
@@ -99,7 +98,7 @@ const CheckoutPage = () => {
         cartValue: newSubTotal,
       }));
       toast.success(
-        `Promo code applied! You saved â‚¹${discountAmount.toFixed(2)}`,
+        `Promo code applied! You saved ₹${discountAmount.toFixed(2)}`,
       );
       setAppliedPromo(true);
     } else {
@@ -200,7 +199,7 @@ const CheckoutPage = () => {
           address: "Razorpay Corporate Office",
         },
         theme: {
-          color: "var(--color-primary)",
+          color: "#F16D34",
         },
       };
 
@@ -238,7 +237,7 @@ const CheckoutPage = () => {
   if (!user || !cart) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="text-xl text-text/80">Loading...</div>
+        <div className="text-xl text-gray-600">Loading...</div>
       </div>
     );
   }
@@ -246,16 +245,17 @@ const CheckoutPage = () => {
   const { subtotal, tax, total } = calculatePrices();
 
   return (
-    <div className="min-h-screen bg-background py-8 px-4">
+    <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1
-            className="text-4xl font-bold text-primary"
+            className="text-4xl font-bold"
+            style={{ color: "var(--color-primary)" }}
           >
             Order Checkout
           </h1>
-          <p className="text-text/80 mt-2">
+          <p className="text-gray-600 mt-2">
             Review your order and complete the payment
           </p>
         </div>
@@ -266,7 +266,8 @@ const CheckoutPage = () => {
             {/* Order Items Card */}
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
               <h2
-                className="text-2xl font-bold mb-6 text-primary"
+                className="text-2xl font-bold mb-6"
+                style={{ color: "var(--color-primary)" }}
               >
                 Order Summary
               </h2>
@@ -277,12 +278,12 @@ const CheckoutPage = () => {
                   cart.cartItem.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex gap-4 border-b pb-4 hover:bg-(--) p-3 rounded transition"
+                      className="flex gap-4 border-b pb-4 hover:bg-gray-50 p-3 rounded transition"
                     >
                       {/* Item Image */}
                       <div className="shrink-0">
                         <img
-                          src={item.images?.[0]?.url || "ðŸ”"}
+                          src={item.images?.[0]?.url || "🍔"}
                           alt={item.itemName}
                           className="w-24 h-24 object-cover rounded-lg"
                         />
@@ -291,22 +292,23 @@ const CheckoutPage = () => {
                       {/* Item Details */}
                       <div className="flex-1">
                         <h3
-                          className="text-lg font-bold text-primary"
+                          className="text-lg font-bold"
+                          style={{ color: "var(--color-primary)" }}
                         >
                           {item.itemName}
                         </h3>
-                        <p className="text-sm text-text/80 mt-1">
+                        <p className="text-sm text-gray-600 mt-1">
                           {item.cuisine} • {item.type}
                         </p>
                         <div className="flex gap-2 mt-2">
-                          <span className="text-xs bg-secondary text-white px-2 py-1 rounded">
+                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
                             {item.servingSize}
                           </span>
-                          <span className="text-xs bg-accent text-white px-2 py-1 rounded">
+                          <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">
                             {item.preparationTime}
                           </span>
                         </div>
-                        <div className="text-lg font-semibold text-text mt-2">
+                        <div className="text-lg font-semibold text-green-600 mt-2">
                           ₹{item.price}
                         </div>
                       </div>
@@ -315,18 +317,25 @@ const CheckoutPage = () => {
                       <div className="flex flex-col items-end justify-between">
                         <button
                           onClick={() => handleRemoveItem(item._id)}
-                          className="text-accent hover:text-primary transition p-2"
+                          className="text-red-500 hover:text-red-700 transition p-2"
                           title="Remove item"
                         >
                           <FaTrash />
                         </button>
 
                         <div
-                          className="flex items-center border border-(--color-secondary) rounded-lg overflow-hidden"
+                          className="flex items-center border rounded-lg overflow-hidden"
+                          style={{
+                            borderColor: "var(--color-secondary)",
+                          }}
                         >
                           <button
                             onClick={() => handleQuantityChange(item._id, -1)}
-                            className={`p-2 hover:bg-(--) transition ${item.quantity === 1 ? "bg-(--color-surface-muted)" : "bg-(--color-surface)"}`}
+                            className="p-2 hover:bg-gray-100 transition"
+                            style={{
+                              backgroundColor:
+                                item.quantity === 1 ? "#f3f4f6" : "white",
+                            }}
                             disabled={item.quantity === 1}
                           >
                             <FaMinus size={12} />
@@ -336,7 +345,7 @@ const CheckoutPage = () => {
                           </span>
                           <button
                             onClick={() => handleQuantityChange(item._id, 1)}
-                            className="p-2 hover:bg-(--) transition"
+                            className="p-2 hover:bg-gray-100 transition"
                           >
                             <FaPlus size={12} />
                           </button>
@@ -344,9 +353,10 @@ const CheckoutPage = () => {
 
                         {/* Item Total */}
                         <div className="text-right mt-2">
-                          <p className="text-sm text-text/80">Subtotal</p>
+                          <p className="text-sm text-gray-600">Subtotal</p>
                           <p
-                            className="text-lg font-bold text-secondary"
+                            className="text-lg font-bold"
+                            style={{ color: "var(--color-secondary)" }}
                           >
                             ₹{(item.price * item.quantity).toFixed(2)}
                           </p>
@@ -356,7 +366,7 @@ const CheckoutPage = () => {
                   ))
                 ) : (
                   <div className="text-center py-8">
-                    <p className="text-text/80 text-lg">Your cart is empty</p>
+                    <p className="text-gray-600 text-lg">Your cart is empty</p>
                   </div>
                 )}
               </div>
@@ -365,29 +375,31 @@ const CheckoutPage = () => {
             {/* Delivery Address Card */}
             <div className="bg-white rounded-lg shadow-md p-6">
               <h2
-                className="text-2xl font-bold mb-6 text-primary"
+                className="text-2xl font-bold mb-6"
+                style={{ color: "var(--color-primary)" }}
               >
                 Delivery Address
               </h2>
 
-              <div className="bg-background border-l-4 border-primary p-4 rounded">
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                 <p
-                  className="font-bold text-lg text-primary"
+                  className="font-bold text-lg"
+                  style={{ color: "var(--color-primary)" }}
                 >
                   {user.fullName}
                 </p>
-                <p className="text-text mt-2">{user.address}</p>
-                <p className="text-text">
+                <p className="text-gray-700 mt-2">{user.address}</p>
+                <p className="text-gray-700">
                   {user.city}, {user.pin}
                 </p>
-                <p className="text-text mt-2">📞 {user.mobileNumber}</p>
+                <p className="text-gray-700 mt-2">📞 {user.mobileNumber}</p>
               </div>
 
               <button
                 onClick={() =>
                   navigate("/user-dashboard", { state: { tab: "profile" } })
                 }
-                className="mt-4 px-4 py-2 text-primary hover:text-secondary font-semibold transition"
+                className="mt-4 px-4 py-2 text-blue-600 hover:text-blue-800 font-semibold transition"
               >
                 ✎ Edit Address
               </button>
@@ -399,22 +411,23 @@ const CheckoutPage = () => {
             {/* Price Summary */}
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
               <h2
-                className="text-xl font-bold mb-6 text-primary"
+                className="text-xl font-bold mb-6"
+                style={{ color: "var(--color-primary)" }}
               >
                 Price Details
               </h2>
 
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between">
-                  <span className="text-text">Subtotal</span>
+                  <span className="text-gray-700">Subtotal</span>
                   <span className="font-semibold">₹{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-text">Tax (5%)</span>
+                  <span className="text-gray-700">Tax (5%)</span>
                   <span className="font-semibold">₹{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-text">Delivery Charge</span>
+                  <span className="text-gray-700">Delivery Charge</span>
                   <span className="font-semibold">
                     ₹{DELIVERY_CHARGE.toFixed(2)}
                   </span>
@@ -422,12 +435,14 @@ const CheckoutPage = () => {
 
                 <div className="border-t pt-4 flex justify-between">
                   <span
-                    className="text-lg font-bold text-primary"
+                    className="text-lg font-bold"
+                    style={{ color: "var(--color-primary)" }}
                   >
                     Total Amount
                   </span>
                   <span
-                    className="text-2xl font-bold text-secondary"
+                    className="text-2xl font-bold"
+                    style={{ color: "var(--color-secondary)" }}
                   >
                     ₹{total.toFixed(2)}
                   </span>
@@ -437,7 +452,8 @@ const CheckoutPage = () => {
               {/* Promo Code Section */}
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3
-                  className="font-bold mb-3 text-primary"
+                  className="font-bold mb-3"
+                  style={{ color: "var(--color-primary)" }}
                 >
                   Promo Code
                 </h3>
@@ -448,11 +464,13 @@ const CheckoutPage = () => {
                     name="promo"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    className="flex-1 border border-(--color-secondary) rounded px-3 py-2 focus:outline-none disabled:bg-(--)"
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none disabled:bg-gray-100"
+                    style={{ borderColor: "var(--color-secondary)" }}
                     disabled={appliedPromo}
                   />
                   <button
-                    className="text-white px-4 py-2 rounded hover:opacity-90 transition disabled:opacity-50 bg-(--color-secondary)"
+                    style={{ backgroundColor: "var(--color-secondary)" }}
+                    className="text-white px-4 py-2 rounded hover:opacity-90 transition disabled:opacity-50"
                     onClick={handlePromoCodeApply}
                     disabled={appliedPromo}
                   >
@@ -464,7 +482,8 @@ const CheckoutPage = () => {
               {/* Payment Method Selection */}
               <div className="mb-6 border-t pt-6 mt-6">
                 <h3
-                  className="font-bold mb-4 text-primary"
+                  className="font-bold mb-4"
+                  style={{ color: "var(--color-primary)" }}
                 >
                   Payment Method
                 </h3>
@@ -479,7 +498,7 @@ const CheckoutPage = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-4 h-4"
                     />
-                    <span className="ml-3 text-text">{"Pay Online"}</span>
+                    <span className="ml-3 text-gray-700">{"Pay Online"}</span>
                   </label>
                   {/* {total < 1000 && (
                     <label className="flex items-center cursor-pointer">
@@ -491,7 +510,7 @@ const CheckoutPage = () => {
                         onChange={(e) => setPaymentMethod(e.target.value)}
                         className="w-4 h-4"
                       />
-                      <span className="ml-3 text-(--)">
+                      <span className="ml-3 text-gray-700">
                         {"Cash on Delivery"}
                       </span>
                     </label>
@@ -503,7 +522,10 @@ const CheckoutPage = () => {
               <button
                 onClick={handlePlaceOrder}
                 disabled={isProcessing}
-                className="w-full text-white font-bold py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50 bg-(--color-secondary)"
+                style={{
+                  backgroundColor: "var(--color-secondary)",
+                }}
+                className="w-full text-white font-bold py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50"
               >
                 {isProcessing ? "Processing..." : "Place Order"}
               </button>
@@ -511,9 +533,9 @@ const CheckoutPage = () => {
               {/* Continue Shopping Link */}
               <button
                 onClick={() => navigate(-1)}
-                className="w-full mt-3 text-(--) font-semibold py-2 rounded-lg hover:text-(--) transition"
+                className="w-full mt-3 text-blue-600 font-semibold py-2 rounded-lg hover:text-blue-800 transition"
               >
-                â† Continue Shopping
+                ← Continue Shopping
               </button>
             </div>
           </div>
@@ -524,5 +546,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-

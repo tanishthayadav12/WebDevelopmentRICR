@@ -84,7 +84,7 @@ const RestaurantDisplayMenu = () => {
         />
       </div>
       <div className="w-7xl p-3 rounded shadow mx-auto mt-2 ">
-        <div className="text-(--) font-bold text-2xl text-center">
+        <div className="text-secondary font-bold text-2xl text-center">
           Menu
         </div>
 
@@ -92,7 +92,7 @@ const RestaurantDisplayMenu = () => {
           {menuItems &&
             menuItems.map((EachItem, idx) => (
               <div
-                className="border border-(--color-secondary) hover:shadow-lg  p-4 rounded"
+                className="border border-gray-100 hover:shadow-lg  p-4 rounded"
                 key={idx}
               >
                 <div className="flex gap-4">
@@ -102,12 +102,12 @@ const RestaurantDisplayMenu = () => {
                     className="w-40 h-40 object-cover rounded "
                   />
 
-                  <div className="flex justify-between border-(--) w-full">
+                  <div className="flex justify-between border-red-500 w-full">
                     <div>
-                      <div className="text-(--) text-lg font-bold">
+                      <div className="text-primary text-lg font-bold">
                         {EachItem.itemName}
                       </div>
-                      <div className="text-sm text-(--)/80 mt-1">
+                      <div className="text-sm text-gray-600 mt-1">
                         {EachItem.description}
                       </div>
                       <div className="mt-3 space-y-1 text-sm">
@@ -118,7 +118,11 @@ const RestaurantDisplayMenu = () => {
                         <div>
                           <span className="font-semibold">Type:</span>{" "}
                           <span
-                            className={`capitalize px-2 py-1 rounded text-white ${EachItem.type === "veg" ? "bg-(--color-accent)" : "bg-(--color-primary)"}`}
+                            className="capitalize px-2 py-1 rounded text-white"
+                            style={{
+                              backgroundColor:
+                                EachItem.type === "veg" ? "#22c55e" : "#ef4444",
+                            }}
                           >
                             {EachItem.type}
                           </span>
@@ -140,16 +144,16 @@ const RestaurantDisplayMenu = () => {
                       <div>
                         <span className="font-semibold">Availability:</span>{" "}
                         <span
-                          className={`capitalize px-2 py-1 rounded ${EachItem.availability === "available" ? "bg-(--) text-(--)" : "bg-(--) text-(--)"}`}
+                          className={`capitalize px-2 py-1 rounded ${EachItem.availability === "available" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
                         >
                           {EachItem.availability}
                         </span>
                       </div>
-                      <div className="text-(--) text-2xl font-bold">
-                        â‚¹{EachItem.price}
+                      <div className="text-primary text-2xl font-bold">
+                        ₹{EachItem.price}
                       </div>
                       <button
-                        className="bg-(--) text-white px-6 py-2 rounded hover:bg-(--) transition disabled:bg-(--)"
+                        className="bg-primary text-white px-6 py-2 rounded hover:bg-primary-hover transition disabled:bg-gray-300"
                         onClick={() => handleAddToCart(EachItem)}
                         disabled={cartFlag.includes(EachItem._id)}
                       >
@@ -171,22 +175,22 @@ const RestaurantDisplayMenu = () => {
 
       {cart && (
         <div className="fixed w-full bottom-5 flex items-center justify-center">
-          <div className="bg-(--) rounded-3xl w-2xl py-2 px-5">
+          <div className="bg-secondary rounded-3xl w-2xl py-2 px-5">
             <div className="flex items-center justify-between">
               <div className="text-white font-bold flex gap-3 items-center">
                 <span>Items : {cart.cartItem.length}</span>
                 <button
-                  className=" text-white px-2 py-2 rounded hover:bg-white/30 transition disabled:bg-(--)"
+                  className=" text-white px-2 py-2 rounded hover:bg-white/30 transition disabled:bg-gray-300"
                   onClick={handleClearCart}
                 >
                   <FaRegTrashAlt />
                 </button>
               </div>
               <div className="text-white font-bold flex gap-4 items-center">
-                <span>â‚¹ : {cart.cartValue}</span>
+                <span>₹ : {cart.cartValue}</span>
 
                 <button
-                  className="text-white px-6 py-2 rounded hover:bg-(--)/40 transition disabled:bg-(--)"
+                  className="text-white px-6 py-2 rounded hover:bg-primary-hover/40 transition disabled:bg-gray-300"
                   onClick={handleCheckout}
                 >
                   Proceed to Checkout
@@ -201,5 +205,3 @@ const RestaurantDisplayMenu = () => {
 };
 
 export default RestaurantDisplayMenu;
-
-

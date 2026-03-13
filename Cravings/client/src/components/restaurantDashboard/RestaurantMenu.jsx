@@ -31,14 +31,14 @@ const RestaurantMenu = () => {
   }, [isAddItemModalOpen,isEditItemModalOpen]);
   return (
     <>
-      <div className="bg-(--) rounded-lg p-6 h-full overflow-y-auto">
-        <div className="bg-white rounded-lg shadow-md p-6 border border-(--) ">
+      <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 ">
           <div className="flex justify-between">
-            <h2 className="text-2xl font-bold text-(--) mb-4">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Menu Management
             </h2>
             <button
-              className="px-4 py-2 bg-(--) text-white rounded-lg hover:bg-(--) transition font-semibold"
+              className="px-4 py-2 bg-color-secondary text-white rounded-lg hover:bg-color-secondary-hover transition font-semibold"
               onClick={() => setIsAddItemModalOpen(true)}
             >
               Add Item
@@ -49,7 +49,7 @@ const RestaurantMenu = () => {
           <div>
             <table className="w-full mt-3">
               <thead>
-                <tr className="grid grid-cols-8 text-lg bg-(--) text-white">
+                <tr className="grid grid-cols-8 text-lg bg-color-secondary text-white">
                   <th className="font-semibold">S.no</th>
                   <th className="font-semibold col-span-2">Item Name</th>
                   <th className="font-semibold">Price</th>
@@ -63,7 +63,7 @@ const RestaurantMenu = () => {
                 {menuItems &&
                   menuItems.map((items, idx) => (
                     <tr
-                      className="grid grid-cols-8 text-center py-2 border-b border-(--)"
+                      className="grid grid-cols-8 text-center py-2 border-b border-gray-300"
                       key={idx}
                     >
                       <td className="">{idx + 1}</td>
@@ -74,12 +74,12 @@ const RestaurantMenu = () => {
                       <td className="flex justify-center items-center text-2xl">
                         {items.availability === "available" ? (
                           <FaToggleOn
-                            className="text-(--)"
+                            className="text-green-500"
                             title="Available"
                           />
                         ) : items.availability === "unavailable" ? (
                           <FaToggleOff
-                            className="text-(--)"
+                            className="text-red-500"
                             title="Unavailable"
                           />
                         ) : (
@@ -91,7 +91,7 @@ const RestaurantMenu = () => {
                       </td>
                       <td className="flex gap-4 justify-center">
                         <button
-                          className="text-(--)/70 p-2 rounded-lg bg-(--) shadow"
+                          className="text-gray-500 p-2 rounded-lg bg-gray-200 shadow"
                           onClick={() => {
                             setSelectedItem(items);
                             setIsViewItemModalOpen(true);
@@ -100,7 +100,7 @@ const RestaurantMenu = () => {
                           <FaEye />
                         </button>
                         <button
-                          className="text-(--)  p-2 rounded-lg bg-(--) shadow"
+                          className="text-blue-500  p-2 rounded-lg bg-gray-200 shadow"
                           onClick={() => {
                             setSelectedItem(items);
                             setIsEditItemModalOpen(true);
@@ -137,5 +137,3 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
-
-

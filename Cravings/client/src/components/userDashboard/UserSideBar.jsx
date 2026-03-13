@@ -65,8 +65,8 @@ const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
                 className={`flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300
                 ${
                   active === item.key
-                    ? "bg-primary text-white"
-                    : "hover:bg-primary/70 "
+                    ? "bg-secondary text-white"
+                    : "hover:bg-gray-100/70 "
                 } 
               `}
                 onClick={() => setActive(item.key)}
@@ -82,7 +82,7 @@ const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
 
         <div>
           <button
-            className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-accent hover:text-white text-primary"
+            className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-red-500 hover:text-white text-red-600"
             onClick={handleLogout}
           >
             {" "}
@@ -96,5 +96,3 @@ const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
 };
 
 export default UserSideBar;
-
-

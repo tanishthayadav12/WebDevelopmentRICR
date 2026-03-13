@@ -32,7 +32,7 @@
 
     return (
       <>
-        <div className="bg-background px-4 py-2 flex justify-between items-center">
+        <div className="bg-primary px-4 py-2 flex justify-between items-center">
           <Link to={"/"}>
             <img
               src={tranparentLogo}
@@ -43,19 +43,19 @@
           <div className="flex gap-4">
             <Link
               to={"/"}
-              className="no-underline text-text hover:text-accent"
+              className="no-underline text-accent hover:text-accent-hover"
             >
               Home
             </Link>
             <Link
               to={"/about"}
-              className="no-underline text-text hover:text-accent"
+              className="no-underline text-accent hover:text-accent-hover"
             >
               About
             </Link>
             <Link
               to={"/contact"}
-              className="no-underline text-text hover:text-accent"
+              className="no-underline text-accent hover:text-accent-hover"
             >
               Contact
             </Link>
@@ -79,7 +79,7 @@
                 </button>
                 <button
                   onClick={() => navigate("/register")}
-                  className="bg-accent py-2 px-4 font-bold hover:bg-primary hover:text-white rounded"
+                  className="bg-secondary py-2 px-4 font-bold hover:bg-secondary-hover hover:text-white rounded"
                 >
                   Register
                 </button>

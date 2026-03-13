@@ -24,27 +24,27 @@ const ViewReceivedOrder = ({ order, onClose }) => {
           <h2 className="text-xl font-bold">Order Details</h2>
           <button
             onClick={onClose}
-            className="text-(--)/70 hover:text-(--)"
+            className="text-gray-500 hover:text-gray-700"
           >
             Close
           </button>
         </div>
         {order && (
           <div>
-            <p className="text-(--) mb-2">
+            <p className="text-gray-700 mb-2">
               <span className="font-semibold">Order Number:</span>{" "}
               {order.orderNumber || order._id?.substring(0, 8)}
             </p>
-            <p className="text-(--) mb-2">
+            <p className="text-gray-700 mb-2">
               <span className="font-semibold">Customer:</span>{" "}
               {order.userId?.fullName || "Unknown"}
             </p>
-            <p className="text-(--) mb-2">
+            <p className="text-gray-700 mb-2">
               <span className="font-semibold">Status:</span>{" "}
               {status || "Pending"}
               {status === "pending" && (
                 <button
-                  className="bg-(--color-accent) hover:bg-(--color-accent-hover) text-white px-4 py-2 rounded-md transition ml-2"
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition ml-2"
                   onClick={() => handleStatusChange("accepted")}
                 >
                   Accept Order
@@ -52,7 +52,7 @@ const ViewReceivedOrder = ({ order, onClose }) => {
               )}
               {status === "accepted" && (
                 <button
-                  className="bg-(--color-accent) hover:bg-(--color-accent-hover) text-white px-4 py-2 rounded-md transition ml-2"
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition ml-2"
                   onClick={() => handleStatusChange("preparing")}
                 >
                   Prepration Started
@@ -60,23 +60,23 @@ const ViewReceivedOrder = ({ order, onClose }) => {
               )}
               {status === "preparing" && (
                 <button
-                  className="bg-(--color-accent) hover:bg-(--color-accent-hover) text-white px-4 py-2 rounded-md transition ml-2"
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition ml-2"
                   onClick={() => handleStatusChange("ready")}
                 >
                   Ready for Pickup
                 </button>
               )}
             </p>
-            <p className="text-(--) mb-2">
-              <span className="font-semibold">Total Amount:</span> â‚¹
+            <p className="text-gray-700 mb-2">
+              <span className="font-semibold">Total Amount:</span> ₹
               {order.orderValue.total || 0}
             </p>
             <h3 className="font-bold text-lg mt-4 mb-2">Items:</h3>
             {order.items && order.items.length > 0 ? (
               order.items.map((item, idx) => (
-                <div key={idx} className="border-b border-(--) py-2">
-                  <p className="text-(--)">{item.name}</p>
-                  <p className="text-sm text-(--)/70">
+                <div key={idx} className="border-b border-gray-200 py-2">
+                  <p className="text-gray-700">{item.name}</p>
+                  <p className="text-sm text-gray-500">
                     Quantity: {item.quantity}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ const ViewReceivedOrder = ({ order, onClose }) => {
 
             <div className="mt-3">
               <button
-                className="bg-red-500 hover:bg-(--color-primary-hover) text-white px-4 py-2 rounded-md transition"
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition"
                 onClick={() => handleStatusChange("rejected")}
               >
                 Reject Order
@@ -101,5 +101,3 @@ const ViewReceivedOrder = ({ order, onClose }) => {
 };
 
 export default ViewReceivedOrder;
-
-

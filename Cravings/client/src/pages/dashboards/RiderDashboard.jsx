@@ -23,8 +23,8 @@ const RiderDashboard = () => {
     return (
       <>
         <div className="p-3">
-          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-primary">
-            <div className="text-5xl text-accent">×</div>
+          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-gray-100">
+            <div className="text-5xl text-red-600">⊗</div>
             <div className="text-xl">
               You are not logged in as Rider. Please login again.
             </div>
@@ -61,4 +61,3 @@ const RiderDashboard = () => {
 };
 
 export default RiderDashboard;
-

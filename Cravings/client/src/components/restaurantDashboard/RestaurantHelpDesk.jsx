@@ -2,10 +2,10 @@
 
 const RestaurantHelpDesk = () => {
   return (
-    <div className="bg-(--) rounded-lg p-6 h-full overflow-y-auto">
-      <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
-        <h2 className="text-2xl font-bold text-(--) mb-4">Help Desk & Support</h2>
-        <div className="text-center text-(--)/70 py-12">
+    <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto">
+      <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Help Desk & Support</h2>
+        <div className="text-center text-gray-500 py-12">
           <p className="text-lg">Support tickets and help desk features will be displayed here</p>
         </div>
       </div>
@@ -14,5 +14,3 @@ const RestaurantHelpDesk = () => {
 };
 
 export default RestaurantHelpDesk;
-
-
