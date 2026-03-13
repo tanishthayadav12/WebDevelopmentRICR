@@ -1,4 +1,5 @@
 import Contact from "../models/contactModel.js";
+import Menu from "../models/menuSchema.js";
 import User from "../models/userModel.js";
 
 export const NewContact = async (req, res, next) => {
@@ -6,7 +7,7 @@ export const NewContact = async (req, res, next) => {
     const { fullName, email, mobileNumber, message } = req.body;
 
     if (!fullName || !email || !mobileNumber || !message) {
-      const error = new Error("All fields required");
+      const error = new Error("All feilds required");
       error.statusCode = 400;
       return next(error);
     }
@@ -39,6 +40,29 @@ export const GetAllRestaurants = async (req, res, next) => {
       message: "Restaurants fetched successfully",
       data: restaurants,
     });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const GetRetaurantMenuData = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      const error = new Error("All feilds required");
+      error.statusCode = 400;
+      return next(error);
+    }
+
+    const restaurantMenuData = await Menu.find({
+      resturantID: id,
+    }).sort({ updatedAt: -1 });
+    //.populate("resturantID");
+
+    res
+      .status(200)
+      .json({ message: "Menu fetched Sucessfully", data: restaurantMenuData });
   } catch (error) {
     next(error);
   }

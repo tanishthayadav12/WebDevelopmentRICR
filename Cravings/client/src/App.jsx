@@ -9,9 +9,13 @@ import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
 import UserDashboard from "./pages/dashboards/UserDashboard";
 import RiderDashboard from "./pages/dashboards/RiderDashboard";
-import RestaurantDashboard from "./pages/dashboards/RestaurantDashboard";
+import ResturantDashboard from "./pages/dashboards/ResturantDashboard";
 import AdminDashboard from "./pages/dashboards/AdminDashboard";
 import OrderNow from "./pages/OrderNow";
+import RestaurantDisplayMenu from "./pages/RestaurantDisplayMenu";
+import NotFound from "./pages/NotFound";
+import CheckoutPage from "./pages/CheckoutPage";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 
 const App = () => {
   return (
@@ -28,9 +32,14 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/user-dashboard" element={<UserDashboard />} />
           <Route path="/rider-dashboard" element={<RiderDashboard />} />
-          <Route path="/restaurant-dashboard" element={<RestaurantDashboard />} />
+          <Route path="/resturant-dashboard" element={<ResturantDashboard />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
-           <Route path="/order-now" element={<OrderNow />} />
+          <Route path="/order-now" element={<OrderNow />} />
+          <Route path="/restaurantMenu" element={<RestaurantDisplayMenu />} />
+          <Route path="/checkout-page" element={<CheckoutPage />} />
+          <Route path="/paymentSuccess" element={<PaymentSuccessPage />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

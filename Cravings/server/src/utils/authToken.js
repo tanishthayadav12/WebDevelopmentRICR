@@ -4,7 +4,7 @@ export const genToken = (user, res) => {
   try {
     const payload = {
       id: user._id,
-      role: user.role || "admin",
+      role: user.role,
     };
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: "1d",
@@ -22,7 +22,6 @@ export const genToken = (user, res) => {
     throw error;
   }
 };
-
 export const genOtpToken = (user, res) => {
   try {
     const payload = {
@@ -30,7 +29,7 @@ export const genOtpToken = (user, res) => {
       role: user.role,
     };
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: "1m",
+      expiresIn: "10m",
     });
 
     console.log(token);
@@ -45,3 +44,6 @@ export const genOtpToken = (user, res) => {
     throw error;
   }
 };
+
+
+

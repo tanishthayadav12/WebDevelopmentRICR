@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import EditProfileModal from "./modals/EditProfileModal";
 import UserImage from "../../assets/userImage.jpg";
@@ -45,13 +45,13 @@ const UserProfile = () => {
   };
 
   const renderField = (label, value) => (
-    <div className="flex justify-between py-2 px-3 border-b border-gray-200 last:border-b-0">
-      <span className="text-gray-600 font-medium">{label}:</span>
-      <span className="text-gray-900 font-semibold">
+    <div className="flex justify-between py-2 px-3 border-b border-(--) last:border-b-0">
+      <span className="text-(--)/80 font-medium">{label}:</span>
+      <span className="text-(--) font-semibold">
         {value && value !== "N/A" ? (
           value
         ) : (
-          <span className="text-gray-400">Not provided</span>
+          <span className="text-(--)/60">Not provided</span>
         )}
       </span>
     </div>
@@ -59,14 +59,14 @@ const UserProfile = () => {
 
   return (
     <>
-      <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto space-y-6">
+      <div className="bg-(--) rounded-lg p-6 h-full overflow-y-auto space-y-6">
         {/* Header Section with Photo and Basic Info */}
-        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+        <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
           <div className="flex gap-6">
             {/* Photo Section */}
             <div className="flex flex-col items-center">
               <div className="relative">
-                <div className="border-4 border-gray-300 rounded-full w-40 h-40 overflow-hidden bg-gray-100">
+                <div className="border-4 border-(--) rounded-full w-40 h-40 overflow-hidden bg-(--)">
                   <img
                     src={preview || user?.photo?.url || UserImage}
                     alt="Profile"
@@ -75,7 +75,7 @@ const UserProfile = () => {
                 </div>
                 <label
                   htmlFor="imageUpload"
-                  className="absolute bottom-2 right-2 bg-(--color-secondary) text-white p-3 rounded-full hover:bg-(--color-secondary-hover) cursor-pointer transition transform hover:scale-110"
+                  className="absolute bottom-2 right-2 bg-(--) text-white p-3 rounded-full hover:bg-(--) cursor-pointer transition transform hover:scale-110"
                 >
                   <FaCamera size={18} />
                 </label>
@@ -87,7 +87,7 @@ const UserProfile = () => {
                   onChange={handlePhotoChange}
                 />
               </div>
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="text-(--)/70 text-sm mt-2">
                 Click camera to change photo
               </p>
             </div>
@@ -96,18 +96,18 @@ const UserProfile = () => {
             <div className="flex justify-between w-full">
               <div>
                 <div className="mb-6">
-                  <h1 className="text-4xl font-bold text-(--color-primary) mb-2">
+                  <h1 className="text-4xl font-bold text-(--) mb-2">
                     {user?.fullName || "User Name"}
                   </h1>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-(--color-secondary) text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
+                    <span className="bg-(--) text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
                       {user?.role || "customer"}
                     </span>
                     <span
                       className={`px-3 py-1 rounded-full text-sm font-semibold ${
                         user?.isActive === "active"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
+                          ? "bg-(--) text-(--)"
+                          : "bg-(--) text-(--)"
                       }`}
                     >
                       {user?.isActive || "active"}
@@ -118,22 +118,22 @@ const UserProfile = () => {
                 {/* Contact Information */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center gap-3">
-                    <span className="text-gray-600 font-medium">Email:</span>
-                    <span className="text-gray-900">
+                    <span className="text-(--)/80 font-medium">Email:</span>
+                    <span className="text-(--)">
                       {user?.email || "N/A"}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-gray-600 font-medium">Phone:</span>
-                    <span className="text-gray-900">
+                    <span className="text-(--)/80 font-medium">Phone:</span>
+                    <span className="text-(--)">
                       {user?.mobileNumber || "N/A"}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-gray-600 font-medium">
+                    <span className="text-(--)/80 font-medium">
                       Member Since:
                     </span>
-                    <span className="text-gray-900">
+                    <span className="text-(--)">
                       {user?.createdAt
                         ? new Date(user.createdAt).toLocaleDateString("en-IN")
                         : "N/A"}
@@ -146,13 +146,13 @@ const UserProfile = () => {
               <div className="flex flex-col justify-center gap-4">
                 <button
                   onClick={() => setIsEditProfileModalOpen(true)}
-                  className="px-6 py-2 bg-(--color-secondary) text-white rounded-lg hover:bg-(--color-secondary-hover) transition font-semibold"
+                  className="px-6 py-2 bg-(--) text-white rounded-lg hover:bg-(--) transition font-semibold"
                 >
                   Edit Profile
                 </button>
                 <button
                   onClick={() => setIsResetPasswordModalOpen(true)}
-                  className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition font-semibold"
+                  className="px-6 py-2 bg-(--) text-white rounded-lg hover:bg-(--) transition font-semibold"
                 >
                   Reset Password
                 </button>
@@ -162,9 +162,9 @@ const UserProfile = () => {
         </div>
 
         {/* Personal Information Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="w-1 h-6 bg-(--color-secondary) rounded"></span>
+        <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+          <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+            <span className="w-1 h-6 bg-(--) rounded"></span>
             Personal Information
           </h2>
           <div className="space-y-1">
@@ -179,9 +179,9 @@ const UserProfile = () => {
         {/* Location Section */}
         {(user?.geoLocation?.lat !== "N/A" ||
           user?.geoLocation?.lon !== "N/A") && (
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-            <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <FaMapLocationDot className="text-(--color-secondary)" />
+          <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+            <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+              <FaMapLocationDot className="text-(--)" />
               Geo Location
             </h2>
             <div className="space-y-1">
@@ -193,9 +193,9 @@ const UserProfile = () => {
 
         {/* Payment Details - UPI Section */}
         {user?.paymentDetails?.upi !== "N/A" && (
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-            <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <FaWallet className="text-(--color-secondary)" />
+          <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+            <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+              <FaWallet className="text-(--)" />
               Payment Details
             </h2>
             <div className="space-y-1">
@@ -207,9 +207,9 @@ const UserProfile = () => {
         {/* Bank Account Details Section */}
         {(user?.paymentDetails?.account_number !== "N/A" ||
           user?.paymentDetails?.ifs_Code !== "N/A") && (
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-            <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <BiSolidBank className="text-(--color-secondary)" />
+          <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+            <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+              <BiSolidBank className="text-(--)" />
               Bank Account Details
             </h2>
             <div className="space-y-1">
@@ -226,9 +226,9 @@ const UserProfile = () => {
         {user?.role === "customer" &&
           (user?.documents?.uidai !== "N/A" ||
             user?.documents?.pan !== "N/A") && (
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <FaFileAlt className="text-(--color-secondary)" />
+            <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+              <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+                <FaFileAlt className="text-(--)" />
                 Documents
               </h2>
               <div className="space-y-1">
@@ -241,9 +241,9 @@ const UserProfile = () => {
         {/* Documents Section - Other Roles */}
         {user?.role !== "customer" &&
           Object.values(user?.documents || {}).some((doc) => doc !== "N/A") && (
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <FaFileAlt className="text-(--color-secondary)" />
+            <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+              <h2 className="text-xl font-bold text-(--) mb-4 flex items-center gap-2">
+                <FaFileAlt className="text-(--)" />
                 Documents
               </h2>
               <div className="space-y-1">
@@ -264,8 +264,8 @@ const UserProfile = () => {
 
         {/* Restaurant Info (for managers) */}
         {(user?.restaurantName !== "N/A" || user?.cuisine !== "N/A") && (
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+          <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
+            <h2 className="text-xl font-bold text-(--) mb-4">
               Restaurant Information
             </h2>
             <div className="space-y-1">
@@ -290,3 +290,5 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
+

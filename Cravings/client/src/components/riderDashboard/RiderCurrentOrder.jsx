@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import api from "../../config/Api";
 // import axios from "axios";
 import Loading from "../Loading";
@@ -15,14 +15,14 @@ const RiderCurrentOrder = () => {
   const [riderLocation, setRiderLocation] = useState(user.geoLocation);
 
   const statusBadgeClass = (status = "") => {
-    if (["delivered"].includes(status)) return "bg-green-100 text-green-800";
+    if (["delivered"].includes(status)) return "bg-(--) text-(--)";
     if (["cancelled", "rejected", "refused", "damaged"].includes(status)) {
-      return "bg-red-100 text-red-800";
+      return "bg-(--) text-(--)";
     }
     if (["ready", "pickedUp", "onTheWay"].includes(status)) {
-      return "bg-blue-100 text-blue-800";
+      return "bg-(--) text-(--)";
     }
-    return "bg-yellow-100 text-yellow-800";
+    return "bg-(--) text-(--)";
   };
 
   const fetchOngoingOrder = async () => {
@@ -102,13 +102,13 @@ const RiderCurrentOrder = () => {
   console.log("Available order : ", availableOrder);
 
   return (
-    <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto">
-      <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+    <div className="bg-(--) rounded-lg p-6 h-full overflow-y-auto">
+      <div className="bg-white rounded-lg shadow-md p-6 border border-(--)">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-800">Current Order</h2>
+          <h2 className="text-2xl font-bold text-(--)">Current Order</h2>
           <button
             onClick={refershLocation}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
+            className="bg-(--) hover:bg-(--) text-white px-4 py-2 rounded-md transition"
           >
             Refresh Location
           </button>
@@ -120,12 +120,12 @@ const RiderCurrentOrder = () => {
             {currentOrder.map((order, idx) => (
               <div
                 key={order._id || idx}
-                className="rounded-lg border border-gray-200 p-4 shadow-sm"
+                className="rounded-lg border border-(--) p-4 shadow-sm"
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-sm text-gray-500">Order Number</p>
-                    <p className="text-lg font-semibold text-gray-800">
+                    <p className="text-sm text-(--)/70">Order Number</p>
+                    <p className="text-lg font-semibold text-(--)">
                       {order.orderNumber || order._id?.substring(0, 8)}
                     </p>
                   </div>
@@ -138,41 +138,41 @@ const RiderCurrentOrder = () => {
 
                 <div className="grid grid-cols-2 gap-3 mt-4 text-sm">
                   <div>
-                    <p className="text-gray-500">Customer</p>
-                    <p className="font-medium text-gray-800">
+                    <p className="text-(--)/70">Customer</p>
+                    <p className="font-medium text-(--)">
                       {order.userId?.fullName || "Unknown"}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500">Restaurant</p>
-                    <p className="font-medium text-gray-800">
+                    <p className="text-(--)/70">Restaurant</p>
+                    <p className="font-medium text-(--)">
                       {order.restaurantId?.restaurantName ||
                         order.restaurantId?.fullName ||
                         "Unknown"}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500">Total Amount</p>
-                    <p className="font-medium text-gray-800">
-                      ₹{order.orderValue?.total || 0}
+                    <p className="text-(--)/70">Total Amount</p>
+                    <p className="font-medium text-(--)">
+                      â‚¹{order.orderValue?.total || 0}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500">Items</p>
-                    <p className="font-medium text-gray-800">
+                    <p className="text-(--)/70">Items</p>
+                    <p className="font-medium text-(--)">
                       {order.items?.length || 0} item
                       {order.items?.length !== 1 ? "s" : ""}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500">Payment Method</p>
-                    <p className="font-medium text-gray-800 capitalize">
+                    <p className="text-(--)/70">Payment Method</p>
+                    <p className="font-medium text-(--) capitalize">
                       {order.orderValue?.paymentMethod || "N/A"}
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500">Placed On</p>
-                    <p className="font-medium text-gray-800">
+                    <p className="text-(--)/70">Placed On</p>
+                    <p className="font-medium text-(--)">
                       {order.createdAt
                         ? new Date(order.createdAt).toLocaleString()
                         : "N/A"}
@@ -181,7 +181,7 @@ const RiderCurrentOrder = () => {
                 </div>
                 <div className="flex justify-between p-5 border-t-2 mt-2">
                   <button
-                    className="bg-green-100 hover:bg-green-300 text-green-700 px-4 py-2 rounded-md transition ml-2"
+                    className="bg-(--) hover:bg-(--color-accent-hover) text-(--) px-4 py-2 rounded-md transition ml-2"
                     onClick={() => {
                       handleDirection("restaurant");
                     }}
@@ -189,7 +189,7 @@ const RiderCurrentOrder = () => {
                     Direction to Restaurant
                   </button>
                   <button
-                    className="bg-green-100 hover:bg-green-300 text-green-700 px-4 py-2 rounded-md transition ml-2"
+                    className="bg-(--) hover:bg-(--color-accent-hover) text-(--) px-4 py-2 rounded-md transition ml-2"
                     onClick={() => {
                       handleDirection("customer");
                     }}
@@ -204,36 +204,36 @@ const RiderCurrentOrder = () => {
 
         {currentOrder.length === 0 && availableOrder.length > 0 && (
           <div className="mt-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl font-semibold text-(--) mb-4">
               Available Orders
             </h3>
 
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-100 border-b-2 border-gray-300">
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                  <tr className="bg-(--) border-b-2 border-(--)">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Order Number
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Customer
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Restaurant
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Total
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Items
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Status
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Distance (Km)
                     </th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700">
+                    <th className="text-left px-4 py-3 font-semibold text-(--)">
                       Action
                     </th>
                   </tr>
@@ -242,23 +242,23 @@ const RiderCurrentOrder = () => {
                   {availableOrder.map((order, idx) => (
                     <tr
                       key={order._id || idx}
-                      className="border-b border-gray-200 hover:bg-gray-50 transition"
+                      className="border-b border-(--) hover:bg-(--) transition"
                     >
-                      <td className="px-4 py-3 text-gray-800 font-medium">
+                      <td className="px-4 py-3 text-(--) font-medium">
                         {order.orderNumber || order._id?.substring(0, 8)}
                       </td>
-                      <td className="px-4 py-3 text-gray-700">
+                      <td className="px-4 py-3 text-(--)">
                         {order.userId?.fullName || "Unknown"}
                       </td>
-                      <td className="px-4 py-3 text-gray-700">
+                      <td className="px-4 py-3 text-(--)">
                         {order.restaurantId?.restaurantName ||
                           order.restaurantId?.fullName ||
                           "Unknown"}
                       </td>
-                      <td className="px-4 py-3 text-gray-800 font-semibold">
-                        ₹{order.orderValue?.total || 0}
+                      <td className="px-4 py-3 text-(--) font-semibold">
+                        â‚¹{order.orderValue?.total || 0}
                       </td>
-                      <td className="px-4 py-3 text-gray-600">
+                      <td className="px-4 py-3 text-(--)/80">
                         {order.items?.length || 0}
                       </td>
                       <td className="px-4 py-3">
@@ -268,12 +268,12 @@ const RiderCurrentOrder = () => {
                           {order.status || "pending"}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-gray-600">
+                      <td className="px-4 py-3 text-(--)/80">
                         {order.distanceFromRider || 0}
                       </td>
                       <td className="ps-4 py-3">
                         <button
-                          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-200"
+                          className="bg-(--) hover:bg-(--) text-white px-4 py-2 rounded-md transition duration-200"
                           onClick={() => {
                             setSelectedOrder(order);
                             setViewDetailsModalOpen(true);
@@ -291,7 +291,7 @@ const RiderCurrentOrder = () => {
         )}
 
         {currentOrder.length === 0 && availableOrder.length === 0 && (
-          <div className="text-center text-gray-500 py-12">
+          <div className="text-center text-(--)/70 py-12">
             <p className="text-lg">No current or available orders right now</p>
           </div>
         )}
@@ -319,3 +319,5 @@ const RiderCurrentOrder = () => {
 };
 
 export default RiderCurrentOrder;
+
+

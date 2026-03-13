@@ -9,6 +9,12 @@ const seedManager = async () => {
   const salt = await bcrypt.genSalt();
 
   console.log("Adding Dummy Restaurants");
+  // DummyManagers.forEach(async (manager) => {
+  //   await User.create({
+  //     ...manager,
+  //     password: await bcrypt.hash(manager.password, salt),
+  //   });
+  // });
 
   const DummyManagersWithHashedPassword = await Promise.all(
     DummyManagers.map(async (manager) => ({
@@ -24,7 +30,6 @@ const seedManager = async () => {
 
 const seedCustomer = async () => {
   const salt = await bcrypt.genSalt();
-
   console.log("Adding Dummy customer");
   const DummyCustomersWithHashedPassword = await Promise.all(
     DummyUsers.map(async (customer) => ({

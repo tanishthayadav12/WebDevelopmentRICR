@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import tranparentLogo from "../assets/transparentLogo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -32,12 +32,12 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-(--color-primary) px-4 py-2 flex justify-between items-center">
+      <div className="bg-(--) px-4 py-2 flex justify-between items-center">
         <Link to={"/"}>
           <img
             src={tranparentLogo}
             alt=""
-            className="h-12 w-20 object-cover invert-100"
+            className="h-12 w-20 object-fit invert-100"
           />
         </Link>
         <div className="flex gap-4">
@@ -64,7 +64,7 @@ const Header = () => {
         <div className="flex gap-4">
           {isLogin ? (
             <div
-              className="text-red-500 cursor-pointer"
+              className="text-(--) cursor-pointer"
               onClick={handleNavigate}
             >
               {user.fullName}
@@ -73,13 +73,13 @@ const Header = () => {
             <>
               <button
                 onClick={() => navigate("/login")}
-                className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
+                className="bg-(--) py-2 px-4 font-bold hover:bg-(--) hover:text-white rounded "
               >
                 Login
               </button>
               <button
                 onClick={() => navigate("/register")}
-                className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
+                className="bg-(--) py-2 px-4 font-bold hover:bg-(--) hover:text-white rounded "
               >
                 Register
               </button>
@@ -92,3 +92,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

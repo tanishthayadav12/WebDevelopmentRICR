@@ -113,10 +113,7 @@ export const DummyManagers = [
     address: "Jubilee Hills",
     city: "Hyderabad",
     pin: "500033",
-    photo: {
-      url: "https://ui-avatars.com/api/?name=Sana+Khan",
-      publicID: "",
-    },
+    photo: { url: "https://ui-avatars.com/api/?name=Sana+Khan", publicID: "" },
     geoLocation: { lat: "17.3850", lon: "78.4867" },
     paymentDetails: {
       upi: "sana@upi",
@@ -182,10 +179,7 @@ export const DummyPartners = [
     address: "Sector 21",
     city: "Noida",
     pin: "201301",
-    photo: {
-      url: "https://ui-avatars.com/api/?name=Aman+Verma",
-      publicID: "",
-    },
+    photo: { url: "https://ui-avatars.com/api/?name=Aman+Verma", publicID: "" },
     geoLocation: { lat: "28.5355", lon: "77.3910" },
     paymentDetails: {
       upi: "aman@upi",
@@ -281,10 +275,7 @@ export const DummyPartners = [
     address: "Indiranagar",
     city: "Bangalore",
     pin: "560038",
-    photo: {
-      url: "https://ui-avatars.com/api/?name=Deepak+Rao",
-      publicID: "",
-    },
+    photo: { url: "https://ui-avatars.com/api/?name=Deepak+Rao", publicID: "" },
     geoLocation: { lat: "12.9716", lon: "77.5946" },
     paymentDetails: {
       upi: "deepak@upi",
@@ -350,10 +341,7 @@ export const DummyUsers = [
     address: "MG Road",
     city: "Kochi",
     pin: "682016",
-    photo: {
-      url: "https://ui-avatars.com/api/?name=Priya+Nair",
-      publicID: "",
-    },
+    photo: { url: "https://ui-avatars.com/api/?name=Priya+Nair", publicID: "" },
     geoLocation: { lat: "9.9312", lon: "76.2673" },
     paymentDetails: {
       upi: "priya@upi",
@@ -416,16 +404,9 @@ export const DummyUsers = [
     address: "Sector 14",
     city: "Gurgaon",
     pin: "122001",
-    photo: {
-      url: "https://ui-avatars.com/api/?name=Amit+Verma",
-      publicID: "",
-    },
+    photo: { url: "https://ui-avatars.com/api/?name=Amit+Verma", publicID: "" },
     geoLocation: { lat: "28.4595", lon: "77.0266" },
-    paymentDetails: {
-      upi: "amit@upi",
-      account_number: "N/A",
-      ifs_Code: "N/A",
-    },
+    paymentDetails: { upi: "amit@upi", account_number: "N/A", ifs_Code: "N/A" },
     restaurantName: "N/A",
     cuisine: "N/A",
     documents: {
@@ -440,6 +421,7 @@ export const DummyUsers = [
   },
 ];
 
+
 export const DummyMenu = [
   {
     itemName: "Paneer Tikka",
@@ -450,12 +432,7 @@ export const DummyMenu = [
     description: "Grilled paneer with spices.",
     price: "260",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg" ,publicID:""}],
   },
   {
     itemName: "Chicken Tikka",
@@ -466,12 +443,7 @@ export const DummyMenu = [
     description: "Smoky marinated chicken.",
     price: "320",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Veg Spring Rolls",
@@ -482,13 +454,9 @@ export const DummyMenu = [
     description: "Crispy rolls with veggies.",
     price: "180",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Paneer Butter Masala",
     cuisine: "North Indian",
@@ -498,12 +466,7 @@ export const DummyMenu = [
     description: "Creamy tomato gravy paneer.",
     price: "320",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Dal Makhani",
@@ -514,12 +477,7 @@ export const DummyMenu = [
     description: "Slow cooked black lentils.",
     price: "240",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Veg Kolhapuri",
@@ -530,13 +488,9 @@ export const DummyMenu = [
     description: "Spicy mixed vegetable curry.",
     price: "280",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Butter Chicken",
     cuisine: "North Indian",
@@ -546,12 +500,7 @@ export const DummyMenu = [
     description: "Rich creamy chicken curry.",
     price: "360",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Chicken Curry",
@@ -562,12 +511,7 @@ export const DummyMenu = [
     description: "Traditional spicy curry.",
     price: "300",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Mutton Rogan Josh",
@@ -578,13 +522,9 @@ export const DummyMenu = [
     description: "Aromatic mutton gravy.",
     price: "420",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Veg Biryani",
     cuisine: "Hyderabadi",
@@ -594,12 +534,7 @@ export const DummyMenu = [
     description: "Fragrant vegetable biryani.",
     price: "220",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Chicken Biryani",
@@ -610,13 +545,9 @@ export const DummyMenu = [
     description: "Classic chicken biryani.",
     price: "280",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Veg Fried Rice",
     cuisine: "Chinese",
@@ -626,12 +557,7 @@ export const DummyMenu = [
     description: "Stir fried rice.",
     price: "150",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Hakka Noodles",
@@ -642,13 +568,9 @@ export const DummyMenu = [
     description: "Classic noodles.",
     price: "160",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Masala Dosa",
     cuisine: "South Indian",
@@ -658,12 +580,7 @@ export const DummyMenu = [
     description: "Crispy dosa with potato.",
     price: "120",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Idli Sambar",
@@ -674,13 +591,9 @@ export const DummyMenu = [
     description: "Soft idli with sambar.",
     price: "100",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Butter Naan",
     cuisine: "Indian Bread",
@@ -690,12 +603,7 @@ export const DummyMenu = [
     description: "Soft butter naan.",
     price: "60",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Tandoori Roti",
@@ -706,13 +614,9 @@ export const DummyMenu = [
     description: "Whole wheat roti.",
     price: "40",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Gulab Jamun",
     cuisine: "Dessert",
@@ -722,12 +626,7 @@ export const DummyMenu = [
     description: "Sweet milk dumplings.",
     price: "90",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Rasmalai",
@@ -738,13 +637,9 @@ export const DummyMenu = [
     description: "Soft cheese dessert.",
     price: "120",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Sweet Lassi",
     cuisine: "Beverage",
@@ -754,12 +649,7 @@ export const DummyMenu = [
     description: "Refreshing yogurt drink.",
     price: "80",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "Masala Chai",
@@ -770,13 +660,9 @@ export const DummyMenu = [
     description: "Indian spiced tea.",
     price: "30",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
+
   {
     itemName: "Veg Burger",
     cuisine: "Fast Food",
@@ -786,12 +672,7 @@ export const DummyMenu = [
     description: "Grilled veggie burger.",
     price: "150",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
   {
     itemName: "French Fries",
@@ -802,11 +683,6 @@ export const DummyMenu = [
     description: "Crispy fries.",
     price: "120",
     availability: "available",
-    images: [
-      {
-        url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",
-        publicID: "",
-      },
-    ],
+    images: [{ url: "https://i.pinimg.com/736x/b1/c5/96/b1c5966c316d50040c38e4d149315990.jpg",publicID:"" }],
   },
 ];

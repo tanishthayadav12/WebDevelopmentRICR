@@ -8,9 +8,9 @@ import AuthRouter from "./src/routers/authRouter.js";
 import PublicRouter from "./src/routers/publicRouter.js";
 import UserRouter from "./src/routers/userRouter.js";
 import RestaurantRouter from "./src/routers/restaurantRouter.js";
-import OrderRouter from "./src/routers/orderRouter.js";
-import PaymentRouter from "./src/routers/paymentRouter.js";
 import RiderRouter from "./src/routers/riderRouter.js";
+import PaymentRouter from "./src/routers/paymentRouter.js";
+import { verifyRazorPayConnect } from "./src/config/razorpay.js";
 
 const app = express();
 
@@ -23,9 +23,8 @@ app.use("/auth", AuthRouter);
 app.use("/public", PublicRouter);
 app.use("/user", UserRouter);
 app.use("/restaurant", RestaurantRouter);
-app.use("/order", OrderRouter);
-app.use("/payment", PaymentRouter);
 app.use("/rider", RiderRouter);
+app.use("/payment", PaymentRouter);
 
 app.get("/", (req, res) => {
   console.log("Server is Working");
@@ -49,5 +48,11 @@ app.listen(port, async () => {
     console.log("Clodinary API is Working :", res);
   } catch (error) {
     console.error("Error Connecting Clodinary API :", error);
+  }
+  try {
+    const res = await verifyRazorPayConnect();
+    console.log("Razor Pay connected", res);
+  } catch (error) {
+    console.error("Error Connecting RazorPay API :", error);
   }
 });

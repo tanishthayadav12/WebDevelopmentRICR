@@ -9,7 +9,7 @@ import User from "../models/userModel.js";
 const seedMenu = async () => {
   try {
     connectDB();
-
+    //Delete Old Menu Data
     console.log("Deleting old Menu Data");
 
     const existingMenudata = await Menu.find();
@@ -33,6 +33,7 @@ const seedMenu = async () => {
     console.log("Menu Data added Successfully");
   } catch (error) {
     console.log(error);
+
     console.error("Error Seeding Menu");
   } finally {
     process.exit(1);

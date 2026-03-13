@@ -9,6 +9,7 @@ const seedAdmin = async () => {
   try {
     await connectDB();
     const salt = await bcrypt.genSalt(10);
+    // DummyAdmin.password = await bcrypt.hash(DummyAdmin.password,salt);
 
     const existingAdmin = await User.findOne({ email: DummyAdmin.email });
     if (existingAdmin) {
@@ -28,11 +29,13 @@ const seedAdmin = async () => {
     });
 
     console.log("Admin Seeded Successfull");
+
     console.log("Admin Name:", AdminUser.fullName);
     console.log("Admin Email:", AdminUser.email);
     console.log("Admin Password:", DummyAdmin.password);
   } catch (error) {
     console.log(error);
+
     console.log("Error Seeding Admin");
   }
 

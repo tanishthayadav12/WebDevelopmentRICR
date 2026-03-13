@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import api from "../../../config/Api";
 import toast from "react-hot-toast";
 
@@ -28,7 +28,7 @@ const ViewDetailsModal = ({ order, onClose }) => {
             order?.restaurantId?.fullName ||
             "Unknown"}
         </p>
-        <p className="mb-2">Total Amount: ₹{order?.orderValue?.total || 0}</p>
+        <p className="mb-2">Total Amount: â‚¹{order?.orderValue?.total || 0}</p>
         <p className="mb-2">
           Resturant Distance: {order?.distanceFromRider || 0} KM
         </p>
@@ -36,13 +36,13 @@ const ViewDetailsModal = ({ order, onClose }) => {
         <div className="flex justify-between">
           <button
             onClick={onClose}
-            className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition"
+            className="mt-4 bg-(--) hover:bg-(--) text-white px-4 py-2 rounded-md transition"
           >
             Close
           </button>
           <button
             onClick={handleAcceptOrder}
-            className="mt-4 bg-(--color-secondary) hover:bg-(--color-secondary-hover) text-white px-4 py-2 rounded-md transition"
+            className="mt-4 bg-(--) hover:bg-(--) text-white px-4 py-2 rounded-md transition"
           >
             Accept Order
           </button>
@@ -53,3 +53,5 @@ const ViewDetailsModal = ({ order, onClose }) => {
 };
 
 export default ViewDetailsModal;
+
+

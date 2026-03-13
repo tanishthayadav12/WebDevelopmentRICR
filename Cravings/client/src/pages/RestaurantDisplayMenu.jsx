@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -84,7 +84,7 @@ const RestaurantDisplayMenu = () => {
         />
       </div>
       <div className="w-7xl p-3 rounded shadow mx-auto mt-2 ">
-        <div className="text-(--color-secondary) font-bold text-2xl text-center">
+        <div className="text-(--) font-bold text-2xl text-center">
           Menu
         </div>
 
@@ -92,7 +92,7 @@ const RestaurantDisplayMenu = () => {
           {menuItems &&
             menuItems.map((EachItem, idx) => (
               <div
-                className="border border-gray-100 hover:shadow-lg  p-4 rounded"
+                className="border border-(--color-secondary) hover:shadow-lg  p-4 rounded"
                 key={idx}
               >
                 <div className="flex gap-4">
@@ -102,12 +102,12 @@ const RestaurantDisplayMenu = () => {
                     className="w-40 h-40 object-cover rounded "
                   />
 
-                  <div className="flex justify-between border-red-500 w-full">
+                  <div className="flex justify-between border-(--) w-full">
                     <div>
-                      <div className="text-(--color-primary) text-lg font-bold">
+                      <div className="text-(--) text-lg font-bold">
                         {EachItem.itemName}
                       </div>
-                      <div className="text-sm text-gray-600 mt-1">
+                      <div className="text-sm text-(--)/80 mt-1">
                         {EachItem.description}
                       </div>
                       <div className="mt-3 space-y-1 text-sm">
@@ -118,11 +118,7 @@ const RestaurantDisplayMenu = () => {
                         <div>
                           <span className="font-semibold">Type:</span>{" "}
                           <span
-                            className="capitalize px-2 py-1 rounded text-white"
-                            style={{
-                              backgroundColor:
-                                EachItem.type === "veg" ? "#22c55e" : "#ef4444",
-                            }}
+                            className={`capitalize px-2 py-1 rounded text-white ${EachItem.type === "veg" ? "bg-(--color-accent)" : "bg-(--color-primary)"}`}
                           >
                             {EachItem.type}
                           </span>
@@ -144,16 +140,16 @@ const RestaurantDisplayMenu = () => {
                       <div>
                         <span className="font-semibold">Availability:</span>{" "}
                         <span
-                          className={`capitalize px-2 py-1 rounded ${EachItem.availability === "available" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                          className={`capitalize px-2 py-1 rounded ${EachItem.availability === "available" ? "bg-(--) text-(--)" : "bg-(--) text-(--)"}`}
                         >
                           {EachItem.availability}
                         </span>
                       </div>
-                      <div className="text-(--color-primary) text-2xl font-bold">
-                        ₹{EachItem.price}
+                      <div className="text-(--) text-2xl font-bold">
+                        â‚¹{EachItem.price}
                       </div>
                       <button
-                        className="bg-(--color-primary) text-white px-6 py-2 rounded hover:bg-(--color-primary-hover) transition disabled:bg-gray-300"
+                        className="bg-(--) text-white px-6 py-2 rounded hover:bg-(--) transition disabled:bg-(--)"
                         onClick={() => handleAddToCart(EachItem)}
                         disabled={cartFlag.includes(EachItem._id)}
                       >
@@ -175,22 +171,22 @@ const RestaurantDisplayMenu = () => {
 
       {cart && (
         <div className="fixed w-full bottom-5 flex items-center justify-center">
-          <div className="bg-(--color-secondary) rounded-3xl w-2xl py-2 px-5">
+          <div className="bg-(--) rounded-3xl w-2xl py-2 px-5">
             <div className="flex items-center justify-between">
               <div className="text-white font-bold flex gap-3 items-center">
                 <span>Items : {cart.cartItem.length}</span>
                 <button
-                  className=" text-white px-2 py-2 rounded hover:bg-white/30 transition disabled:bg-gray-300"
+                  className=" text-white px-2 py-2 rounded hover:bg-white/30 transition disabled:bg-(--)"
                   onClick={handleClearCart}
                 >
                   <FaRegTrashAlt />
                 </button>
               </div>
               <div className="text-white font-bold flex gap-4 items-center">
-                <span>₹ : {cart.cartValue}</span>
+                <span>â‚¹ : {cart.cartValue}</span>
 
                 <button
-                  className="text-white px-6 py-2 rounded hover:bg-(--color-primary-hover)/40 transition disabled:bg-gray-300"
+                  className="text-white px-6 py-2 rounded hover:bg-(--)/40 transition disabled:bg-(--)"
                   onClick={handleCheckout}
                 >
                   Proceed to Checkout
@@ -205,3 +201,5 @@ const RestaurantDisplayMenu = () => {
 };
 
 export default RestaurantDisplayMenu;
+
+

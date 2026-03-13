@@ -3,7 +3,7 @@ import User from "../models/userModel.js";
 
 export const Protect = async (req, res, next) => {
   try {
-    const biscut = req.cookies.Biscoff;
+    const biscut = req.cookies.parleG;
     console.log("Token recived in Cookies:", biscut);
 
     const tea = jwt.verify(biscut, process.env.JWT_SECRET);

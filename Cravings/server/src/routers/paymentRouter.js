@@ -1,22 +1,16 @@
 import express from "express";
+import { Protect } from "../middlewares/authMiddleware.js";
 import {
-  GetPaymentDetails,
-  ProcessRefund,
-  GetTransactionHistory,
-  GetPaymentStatistics,
-  DownloadInvoice,
+  RazorPayCreateOrder,
+  RazorpayGetKey,
+  RazorPayVerifyPayment,
 } from "../controllers/paymentController.js";
-import { Protect, ManagerProtect } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-// User routes
-router.get("/:orderId/details", Protect, GetPaymentDetails);
-router.post("/:orderId/refund", Protect, ProcessRefund);
-router.get("/user/transactions", Protect, GetTransactionHistory);
-router.get("/:orderId/invoice", Protect, DownloadInvoice);
+router.get("/getRazorpayKey", Protect, RazorpayGetKey);
 
-// Restaurant manager routes
-router.get("/restaurant/statistics", Protect, ManagerProtect, GetPaymentStatistics);
+router.post("/createOrder", RazorPayCreateOrder);
+router.post("/verifyPayment", Protect, RazorPayVerifyPayment);
 
 export default router;

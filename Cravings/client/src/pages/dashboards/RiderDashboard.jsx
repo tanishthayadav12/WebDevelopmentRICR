@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import RiderSideBar from "../../components/riderDashboard/RiderSideBar";
 import RiderOverview from "../../components/riderDashboard/RiderOverview";
 import RiderProfile from "../../components/riderDashboard/RiderProfile";
@@ -23,8 +23,8 @@ const RiderDashboard = () => {
     return (
       <>
         <div className="p-3">
-          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-gray-100">
-            <div className="text-5xl text-red-600">⊗</div>
+          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-(--)">
+            <div className="text-5xl text-(--)">âŠ—</div>
             <div className="text-xl">
               You are not logged in as Rider. Please login again.
             </div>
@@ -61,3 +61,4 @@ const RiderDashboard = () => {
 };
 
 export default RiderDashboard;
+

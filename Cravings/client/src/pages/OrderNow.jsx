@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
@@ -47,7 +47,7 @@ const OrderNow = () => {
         {restaurant &&
           restaurant.map((EachRestaurant, idx) => (
             <div
-              className="h-100 border border-gray-100 rounded-xl p-2 group cursor-pointer hover:scale-103 hover:shadow-xl hover:border-(--color-secondary) duration-100"
+              className="h-100 border border-(--color-secondary) rounded-xl p-2 group cursor-pointer hover:scale-103 hover:shadow-xl hover:border-(--color-secondary-hover) duration-100"
               key={idx}
               onClick={() => handleRestaurantClick(EachRestaurant)}
             >
@@ -56,7 +56,7 @@ const OrderNow = () => {
                 alt=""
                 className="w-full h-[50%] object-cover rounded-t-xl"
               />
-              <div className="text-2xl font-semibold text-(--color-secondary)">
+              <div className="text-2xl font-semibold text-(--)">
                 {EachRestaurant.restaurantName}
               </div>
               <div>{EachRestaurant.cuisine}</div>
@@ -64,7 +64,7 @@ const OrderNow = () => {
               <div>{EachRestaurant.city}</div>
               <div>{EachRestaurant.pin}</div>
               <div>{EachRestaurant.mobileNumber}</div>
-              <div className="flex float-end items-center text-(--color-secondary) gap-2 group-hover:border-b-2 w-fit">
+              <div className="flex float-end items-center text-(--) gap-2 group-hover:border-b-2 w-fit">
                 Explore Menu <FaArrowRight />
               </div>
             </div>
@@ -75,3 +75,5 @@ const OrderNow = () => {
 };
 
 export default OrderNow;
+
+
