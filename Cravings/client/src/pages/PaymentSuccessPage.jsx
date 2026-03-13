@@ -22,30 +22,30 @@ const PaymentSuccessPage = () => {
 
   if (!order) {
     return (
-      <div className="min-h-screen bg-(--) flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <p className="text-(--)/80 text-lg">Loading order details...</p>
+          <p className="text-text/80 text-lg">Loading order details...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-(--) py-8 px-4">
+    <div className="min-h-screen bg-background py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Success Header */}
         <div className="text-center mb-8">
           <div className="mb-4">
             <FaCheckCircle
-              className="text-6xl mx-auto text-(--color-secondary)"
+              className="text-6xl mx-auto text-secondary"
             />
           </div>
           <h1
-            className="text-3xl font-bold mb-2 text-(--color-primary)"
+            className="text-3xl font-bold mb-2 text-primary"
           >
             Order Placed!
           </h1>
-          <p className="text-(--)/80">
+          <p className="text-text/80">
             Your order has been successfully placed. Thank you for choosing
             Cravings!
           </p>
@@ -59,18 +59,18 @@ const PaymentSuccessPage = () => {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <p
-                    className="text-2xl font-bold text-(--color-primary)"
+                    className="text-2xl font-bold text-primary"
                   >
                     {order.orderNumber}
                   </p>
                 </div>
-                <span className="px-4 py-2 rounded-full text-sm font-semibold bg-(--) text-(--)">
+                <span className="px-4 py-2 rounded-full text-sm font-semibold bg-secondary text-white">
                   Paid
                 </span>
               </div>
               <div className="border-t pt-4 flex justify-between items-center">
-                <p className="text-(--)/80 text-sm">Order Date & Time</p>
-                <p className="text-(--) font-semibold">
+                <p className="text-text/80 text-sm">Order Date & Time</p>
+                <p className="text-text font-semibold">
                   {new Date(order.createdAt).toLocaleDateString()} at{" "}
                   {new Date(order.createdAt).toLocaleTimeString()}
                 </p>
@@ -78,9 +78,9 @@ const PaymentSuccessPage = () => {
             </div>
 
             {/* Order Items Card */}
-            <div className="bg-white rounded-lg shadow-md p-6 border border-(--) mb-6">
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 mb-6">
               <h2
-                className="text-xl font-bold mb-4 text-(--color-primary)"
+                className="text-xl font-bold mb-4 text-primary"
               >
                 Order Items
               </h2>
@@ -92,20 +92,20 @@ const PaymentSuccessPage = () => {
                       className="flex justify-between items-center border-b pb-3"
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-(--)">
+                        <p className="font-semibold text-text">
                           {item.itemName}
                         </p>
-                        <p className="text-sm text-(--)/70">
-                          Qty: {item.quantity} Ã— â‚¹{item.price}
+                        <p className="text-sm text-text/70">
+                          Qty: {item.quantity} × ₹{item.price}
                         </p>
                       </div>
-                      <p className="font-semibold text-(--)">
-                        â‚¹{(item.price * item.quantity).toFixed(2)}
+                      <p className="font-semibold text-text">
+                        ₹{(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
                   ))
                 ) : (
-                  <p className="text-(--)/70">No items in order</p>
+                  <p className="text-text/70">No items in order</p>
                 )}
               </div>
             </div>
@@ -114,35 +114,35 @@ const PaymentSuccessPage = () => {
           {/* Sidebar (Right) */}
           <div className="lg:col-span-1">
             {/* Delivery Address Card */}
-            <div className="bg-white rounded-lg shadow-md p-6 border border-(--) mb-6">
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 mb-6">
               <div className="flex items-start gap-3 mb-4">
                 <FaMapMarkerAlt
-                  className="text-xl shrink-0 mt-1 text-(--color-secondary)"
+                  className="text-xl shrink-0 mt-1 text-secondary"
                 />
                 <h3
-                  className="font-bold text-(--color-primary)"
+                  className="font-bold text-primary"
                 >
                   Delivery Address
                 </h3>
               </div>
               <div className="space-y-2">
-                <p className="font-semibold text-(--)">
+                <p className="font-semibold text-text">
                   {order.userId?.fullName}
                 </p>
-                <p className="text-sm text-(--)/80">{order.userId?.address}</p>
-                <p className="text-sm text-(--)/80">
+                <p className="text-sm text-text/80">{order.userId?.address}</p>
+                <p className="text-sm text-text/80">
                   {order.userId?.city}, {order.userId?.pin}
                 </p>
-                <p className="text-sm text-(--)/80">
-                  ðŸ“ž {order.userId?.mobileNumber}
+                <p className="text-sm text-text/80">
+                  📞 {order.userId?.mobileNumber}
                 </p>
               </div>
             </div>
 
             {/* Price Breakdown Card */}
-            <div className="bg-white rounded-lg shadow-md p-6 border border-(--) mb-4">
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 mb-4">
               <h2
-                className="text-xl font-bold mb-4 text-(--color-primary)"
+                className="text-xl font-bold mb-4 text-primary"
               >
                 Price Breakdown
               </h2>
@@ -182,14 +182,14 @@ const PaymentSuccessPage = () => {
                 )}
                 <div className="border-t pt-3 flex justify-between">
                   <span
-                    className="text-lg font-bold text-(--color-primary)"
+                    className="text-lg font-bold text-primary"
                   >
                     Total Amount
                   </span>
                   <span
-                    className="text-2xl font-bold text-(--color-secondary)"
+                    className="text-2xl font-bold text-secondary"
                   >
-                    â‚¹{order.orderValue?.total?.toFixed(2)}
+                    ₹{order.orderValue?.total?.toFixed(2)}
                   </span>
                 </div>
               </div>
@@ -200,7 +200,7 @@ const PaymentSuccessPage = () => {
               onClick={() =>
                 navigate("/user-dashboard", { state: { tab: "orders" } })
               }
-              className="text-white w-full font-bold py-3 rounded-lg hover:opacity-90 transition bg-(--color-primary)"
+              className="text-white w-full font-bold py-3 rounded-lg hover:opacity-90 transition bg-primary"
             >
               Track Order
             </button>
@@ -211,13 +211,13 @@ const PaymentSuccessPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           <button
             onClick={() => navigate("/order-now")}
-            className="border-2 font-bold py-3 rounded-lg hover:bg-(--) transition text-(--color-secondary) border-(--color-secondary)"
+            className="border-2 font-bold py-3 rounded-lg hover:bg-secondary transition text-secondary border-secondary"
           >
             Continue Shopping
           </button>
           <button
             onClick={() => navigate("/")}
-            className="text-white font-bold py-3 rounded-lg hover:opacity-90 transition bg-(--color-secondary)"
+            className="text-white font-bold py-3 rounded-lg hover:opacity-90 transition bg-secondary"
           >
             Go to Home
           </button>

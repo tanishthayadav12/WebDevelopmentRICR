@@ -44,7 +44,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
+      <div className="min-h-screen bg-linear-to-br from-primary/10 to-secondary/10 py-6 px-4">
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
@@ -54,7 +54,7 @@ const Contact = () => {
           </div>
 
           {/* Form Container */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-primary">
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
@@ -71,7 +71,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
 
                   <input
@@ -82,7 +82,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                   <input
                     type="tel"
@@ -93,7 +93,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                   <textarea
                     name="message"
@@ -102,7 +102,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                 </div>
               </div>
@@ -119,7 +119,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
+                  className="flex-1 bg-linear-to-r from-primary to-primary-hover text-white font-bold py-4 px-6 rounded-lg hover:from-primary-hover hover:to-primary transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Submitting" : "Submit"}
                 </button>

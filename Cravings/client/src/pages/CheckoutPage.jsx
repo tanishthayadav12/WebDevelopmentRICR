@@ -238,7 +238,7 @@ const CheckoutPage = () => {
   if (!user || !cart) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="text-xl text-(--)/80">Loading...</div>
+        <div className="text-xl text-text/80">Loading...</div>
       </div>
     );
   }
@@ -246,16 +246,16 @@ const CheckoutPage = () => {
   const { subtotal, tax, total } = calculatePrices();
 
   return (
-    <div className="min-h-screen bg-(--) py-8 px-4">
+    <div className="min-h-screen bg-background py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1
-            className="text-4xl font-bold text-(--color-primary)"
+            className="text-4xl font-bold text-primary"
           >
             Order Checkout
           </h1>
-          <p className="text-(--)/80 mt-2">
+          <p className="text-text/80 mt-2">
             Review your order and complete the payment
           </p>
         </div>
@@ -266,7 +266,7 @@ const CheckoutPage = () => {
             {/* Order Items Card */}
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
               <h2
-                className="text-2xl font-bold mb-6 text-(--color-primary)"
+                className="text-2xl font-bold mb-6 text-primary"
               >
                 Order Summary
               </h2>
@@ -291,23 +291,23 @@ const CheckoutPage = () => {
                       {/* Item Details */}
                       <div className="flex-1">
                         <h3
-                          className="text-lg font-bold text-(--color-primary)"
+                          className="text-lg font-bold text-primary"
                         >
                           {item.itemName}
                         </h3>
-                        <p className="text-sm text-(--)/80 mt-1">
-                          {item.cuisine} â€¢ {item.type}
+                        <p className="text-sm text-text/80 mt-1">
+                          {item.cuisine} • {item.type}
                         </p>
                         <div className="flex gap-2 mt-2">
-                          <span className="text-xs bg-(--) text-(--) px-2 py-1 rounded">
+                          <span className="text-xs bg-secondary text-white px-2 py-1 rounded">
                             {item.servingSize}
                           </span>
-                          <span className="text-xs bg-(--) text-(--) px-2 py-1 rounded">
+                          <span className="text-xs bg-accent text-white px-2 py-1 rounded">
                             {item.preparationTime}
                           </span>
                         </div>
-                        <div className="text-lg font-semibold text-(--) mt-2">
-                          â‚¹{item.price}
+                        <div className="text-lg font-semibold text-text mt-2">
+                          ₹{item.price}
                         </div>
                       </div>
 
@@ -315,7 +315,7 @@ const CheckoutPage = () => {
                       <div className="flex flex-col items-end justify-between">
                         <button
                           onClick={() => handleRemoveItem(item._id)}
-                          className="text-(--) hover:text-(--) transition p-2"
+                          className="text-accent hover:text-primary transition p-2"
                           title="Remove item"
                         >
                           <FaTrash />
@@ -344,11 +344,11 @@ const CheckoutPage = () => {
 
                         {/* Item Total */}
                         <div className="text-right mt-2">
-                          <p className="text-sm text-(--)/80">Subtotal</p>
+                          <p className="text-sm text-text/80">Subtotal</p>
                           <p
-                            className="text-lg font-bold text-(--color-secondary)"
+                            className="text-lg font-bold text-secondary"
                           >
-                            â‚¹{(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </p>
                         </div>
                       </div>
@@ -356,7 +356,7 @@ const CheckoutPage = () => {
                   ))
                 ) : (
                   <div className="text-center py-8">
-                    <p className="text-(--)/80 text-lg">Your cart is empty</p>
+                    <p className="text-text/80 text-lg">Your cart is empty</p>
                   </div>
                 )}
               </div>
@@ -365,31 +365,31 @@ const CheckoutPage = () => {
             {/* Delivery Address Card */}
             <div className="bg-white rounded-lg shadow-md p-6">
               <h2
-                className="text-2xl font-bold mb-6 text-(--color-primary)"
+                className="text-2xl font-bold mb-6 text-primary"
               >
                 Delivery Address
               </h2>
 
-              <div className="bg-(--color-background) border-l-4 border-(--color-primary) p-4 rounded">
+              <div className="bg-background border-l-4 border-primary p-4 rounded">
                 <p
-                  className="font-bold text-lg text-(--color-primary)"
+                  className="font-bold text-lg text-primary"
                 >
                   {user.fullName}
                 </p>
-                <p className="text-(--) mt-2">{user.address}</p>
-                <p className="text-(--)">
+                <p className="text-text mt-2">{user.address}</p>
+                <p className="text-text">
                   {user.city}, {user.pin}
                 </p>
-                <p className="text-(--) mt-2">ðŸ“ž {user.mobileNumber}</p>
+                <p className="text-text mt-2">📞 {user.mobileNumber}</p>
               </div>
 
               <button
                 onClick={() =>
                   navigate("/user-dashboard", { state: { tab: "profile" } })
                 }
-                className="mt-4 px-4 py-2 text-(--) hover:text-(--) font-semibold transition"
+                className="mt-4 px-4 py-2 text-primary hover:text-secondary font-semibold transition"
               >
-                âœŽ Edit Address
+                ✎ Edit Address
               </button>
             </div>
           </div>
@@ -399,37 +399,37 @@ const CheckoutPage = () => {
             {/* Price Summary */}
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
               <h2
-                className="text-xl font-bold mb-6 text-(--color-primary)"
+                className="text-xl font-bold mb-6 text-primary"
               >
                 Price Details
               </h2>
 
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between">
-                  <span className="text-(--)">Subtotal</span>
-                  <span className="font-semibold">â‚¹{subtotal.toFixed(2)}</span>
+                  <span className="text-text">Subtotal</span>
+                  <span className="font-semibold">₹{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-(--)">Tax (5%)</span>
-                  <span className="font-semibold">â‚¹{tax.toFixed(2)}</span>
+                  <span className="text-text">Tax (5%)</span>
+                  <span className="font-semibold">₹{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-(--)">Delivery Charge</span>
+                  <span className="text-text">Delivery Charge</span>
                   <span className="font-semibold">
-                    â‚¹{DELIVERY_CHARGE.toFixed(2)}
+                    ₹{DELIVERY_CHARGE.toFixed(2)}
                   </span>
                 </div>
 
                 <div className="border-t pt-4 flex justify-between">
                   <span
-                    className="text-lg font-bold text-(--color-primary)"
+                    className="text-lg font-bold text-primary"
                   >
                     Total Amount
                   </span>
                   <span
-                    className="text-2xl font-bold text-(--color-secondary)"
+                    className="text-2xl font-bold text-secondary"
                   >
-                    â‚¹{total.toFixed(2)}
+                    ₹{total.toFixed(2)}
                   </span>
                 </div>
               </div>
@@ -437,7 +437,7 @@ const CheckoutPage = () => {
               {/* Promo Code Section */}
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3
-                  className="font-bold mb-3 text-(--color-primary)"
+                  className="font-bold mb-3 text-primary"
                 >
                   Promo Code
                 </h3>
@@ -464,7 +464,8 @@ const CheckoutPage = () => {
               {/* Payment Method Selection */}
               <div className="mb-6 border-t pt-6 mt-6">
                 <h3
-                    className="font-bold mb-4 text-(--color-primary)"
+                  className="font-bold mb-4 text-primary"
+                >
                   Payment Method
                 </h3>
 
@@ -478,7 +479,7 @@ const CheckoutPage = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-4 h-4"
                     />
-                    <span className="ml-3 text-(--)">{"Pay Online"}</span>
+                    <span className="ml-3 text-text">{"Pay Online"}</span>
                   </label>
                   {/* {total < 1000 && (
                     <label className="flex items-center cursor-pointer">

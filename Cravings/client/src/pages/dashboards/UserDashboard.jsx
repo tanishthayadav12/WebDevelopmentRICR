@@ -25,9 +25,9 @@ const UserDashboard = () => {
     return (
       <>
         <div className="p-3">
-          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-(--)">
-            <div className="text-5xl text-(--)">
-              âŠ—
+          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-primary">
+            <div className="text-5xl text-accent">
+              ×
             </div>
             <div className="text-xl">
               You are not login as Customer. Please Login again.
@@ -42,7 +42,7 @@ const UserDashboard = () => {
     <>
       <div className="w-full h-[90vh] flex">
         <div
-          className={`bg-(--color-background) duration-300 ${isCollapsed ? "w-2/60" : "w-12/60"}`}
+          className={`bg-background duration-300 ${isCollapsed ? "w-2/60" : "w-12/60"}`}
         >
           <UserSideBar
             active={active}

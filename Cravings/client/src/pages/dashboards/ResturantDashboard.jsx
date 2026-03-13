@@ -25,8 +25,8 @@ const RestaurantDashboard = () => {
     return (
       <>
         <div className="p-3">
-          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-(--)">
-            <div className="text-5xl text-(--)">âŠ—</div>
+          <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-primary">
+            <div className="text-5xl text-accent">×</div>
             <div className="text-xl">
               You are not logged in as Restaurant Manager. Please login again.
             </div>

@@ -1,18 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary */
-  --color-primary: #5a9cb5;
-  --color-primary-hover: #4a8aa2;
+  /* Primary (#F26076) */
+  --color-primary: #f26076;
+  --color-primary-hover: #d14d62;
 
-  /* Secondary */
-  --color-secondary: #face68;
-  --color-secondary-hover: #faac68;
+  /* Secondary (#FF9760) */
+  --color-secondary: #ff9760;
+  --color-secondary-hover: #e67e4d;
+
+  /* Accent (#FFD150) */
+  --color-accent: #ffd150;
+  --color-accent-hover: #e6b83d;
+
+  /* Success / Fresh (#458B73) */
+  --color-success: #458b73;
+  --color-success-hover: #3a7561;
 
   /* Background & Text */
-  --color-background: #f7fafc;
-  --color-text: #1f2a30;
-
-  /* Accent */
-  --color-accent: #fa6868;
+  --color-background: #fffcfb;
+  --color-text: #2b2b2b;
 }
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-success: var(--color-success);
+  --color-success-hover: var(--color-success-hover);
+  --color-bg-site: var(--color-background);
+  --color-text-site: var(--color-text);
+}
+
+
